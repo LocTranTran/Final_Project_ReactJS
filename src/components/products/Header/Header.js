@@ -20,7 +20,7 @@ const Header = () => {
               
           </div>          
            <div className="col-4"><Button title="Đăng Nhập"/></div>
-           <div className="col-4"><Button title="Đăng Nhập"/></div>
+           <div className="col-4"><Button title="Đăng Ký"/></div>
           </div>
         </div>
       </div>
