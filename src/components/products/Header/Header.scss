@@ -1,11 +1,61 @@
-.header{
-    height:110px;
-    display:flex;
-    align-items: center;
+// Top Header
+.language-container {
+  position: relative;
+  display: inline-block;
+}
 
-    .container-xxl {
-        background-color: rgb(190, 196, 196);
-        height:100px;
-        padding-top: 25px;
+.current-language {
+  position: relative;
+
+  &:hover {
+    &:after {
+      content: "English";
     }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    padding: 10px;
+    display: none;
+  }
+
+  .language-container:hover &::after {
+    display: block;
+  }
+}
+
+.language-option {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.bander {
+    margin: 2px;
+    border-radius: 5px !important;
+}
+.banner-big {
+    background-image:url('https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2023/09/hinh-nen-may-tinh-4k-cong-nghe-4.jpg.webp') ;
+    height: 600px;
+    background-size: cover;
+}
+.banner-small:nth-child(1){
+        background-image:url('https://hoanghamobile.com/tin-tuc/wp-content/uploads/2023/09/hinh-nen-may-tinh-4k-cong-nghe.jpg') ;
+    height: 300px;
+    background-size: cover;
+
+}
+.banner-small:nth-child(2){
+        background-image:url('https://hoanghamobile.com/tin-tuc/wp-content/webp-express/webp-images/uploads/2023/09/hinh-nen-may-tinh-4k-cong-nghe-9.jpg.webp') ;
+    height: 300px;
+    background-size: cover;
+
 }
