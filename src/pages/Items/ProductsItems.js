@@ -1,22 +1,22 @@
 import React,{memo} from 'react'
-import Button from '../../components/common/Button';
-
+import './ProductsItems.scss'
 const ProductsItems = ({product}) => {
   return (
-    <div className="product__item">
+    <div className="product__item border">
       <div className="products__item--img">
-        <img src={product.img} alt=""/>
+        <img src={product.image} key={product.id} alt="" />
       </div>
-      <div className="products__item--title">
-        <div className="title--info">
-          <span className="title--info-name">{product.name}</span>
+      <div className="products__item--title border">
+        <div className="title--info d-flex ">
+          <span className="title--info-name">{product.title}</span>
           <span className="title--info-price">{product.price}</span>
           <span className="title--info-des">{product.des}</span>
         </div>
-        <div className="title--btn">
-          <Button title="Buy"/>
+        <div>
+          <button className="title--btn">
+            <i class="fa-solid fa-basket-shopping" />
+          </button>
         </div>
-
       </div>
     </div>
   );

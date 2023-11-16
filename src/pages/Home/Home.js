@@ -1,9 +1,11 @@
 import React,{memo} from 'react'
+import Banner from './Banner'
 
 const Home = () => {
   return (
     <div>
-      <h1>Home1</h1>
+      {/* 3 ảnh dưới header */}
+      <Banner/>
     </div>
   )
 }
