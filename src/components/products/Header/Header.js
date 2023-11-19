@@ -15,16 +15,16 @@ const Header = () => {
           >
             <div className="col-3">
               <i
-                class="fa-solid fa-location-dot fa-xl"
+                className="fa-solid fa-location-dot fa-xl"
                 style={{ color: " #898a8b" }}
               />
               <span> Hải Châu ,Đà Nẵng ,Việt Nam</span>
             </div>
             <div className="col-5 d-flex justify-content-between  ">
               <div className="col-4 ">
-                <div class="language-container">
-                  <span class="current-language">Tiếng Việt </span>
-                  <i class="fa-solid fa-chevron-down fa-sm"></i>
+                <div className="language-container">
+                  <span className="current-language">Tiếng Việt </span>
+                  <i className="fa-solid fa-chevron-down fa-sm"></i>
                 </div>
               </div>
               |
@@ -53,7 +53,7 @@ const Header = () => {
               <Button
                 title={
                   <i
-                    class="fa-solid fa-magnifying-glass fa-xl"
+                    className="fa-solid fa-magnifying-glass fa-xl"
                     style={{ color: "black" }}
                   />
                 }
@@ -62,7 +62,7 @@ const Header = () => {
             <div className="col-3 d-flex justify-content-center align-items-center ">
               <div className="col-2  ">
                 <i
-                  class="fa-solid fa-store fa-2xl"
+                  className="fa-solid fa-store fa-2xl"
                   style={{ color: "#030303" }}
                 ></i>
               </div>
@@ -90,24 +90,17 @@ const Header = () => {
               className="col-6 d-flex align-items-center justify-content-around "
               style={{ fontSize: "1.2rem", color: "#fff" }}
             >
-              <Link to="">
+              {/* link  */}
+              <Link to="/">
                 <span>Trang Chủ</span>
               </Link>
-              <Link to="products">
+              <Link to="/products">
                 <span>Sản Phẩm</span>
               </Link>
-              <Link to="">
-                <span>Góp Ý</span>
-              </Link>
-              <Link to="">
-                <span>Góp Ý</span>
-              </Link>
-              <Link to="">
-                <span>Góp Ý</span>
-              </Link>
+          
             </div>
             <div className="col-4 form-control-lg ">
-              <i class="fa-solid fa-phone"></i> 0789006730
+              <i className="fa-solid fa-phone"></i> 0789006730
             </div>
           </nav>
         </div>

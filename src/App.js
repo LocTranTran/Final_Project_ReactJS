@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/products/Header/Header";
 import Footer from "./components/products/Footer/Footer";
-import Home from "./pages/Home/Home";
-import Products from "./pages/Items/Products";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
 import { CartProvider } from "./utils/CartContext";
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
             <Route path="/products" element={<Products />} />
           </Routes>
         </div>
-          <Footer />
+        <Footer />
       </BrowserRouter>
     </CartProvider>
   );

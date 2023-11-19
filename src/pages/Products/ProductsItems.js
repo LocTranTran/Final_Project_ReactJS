@@ -1,12 +1,16 @@
-import React,{memo} from 'react'
+import React, { memo } from 'react'
+import PropTypes from "prop-types"; 
 import './ProductsItems.scss'
-const ProductsItems = ({product}) => {
+const ProductsItems = ({ product }) => {
+  ProductsItems.propTypes = {
+    product: PropTypes.object.isRequired,
+  };
   return (
     <div className="product__item border">
       <div className="products__item--img">
         <img src={product.image} key={product.id} alt="" />
       </div>
-      <div className="products__item--title border">
+      <div className="products__item--title ">
         <div className="title--info d-flex ">
           <span className="title--info-name">{product.title}</span>
           <span className="title--info-price">{product.price}</span>
@@ -14,7 +18,7 @@ const ProductsItems = ({product}) => {
         </div>
         <div>
           <button className="title--btn">
-            <i class="fa-solid fa-basket-shopping" />
+            <i className="fa-solid fa-basket-shopping fa-xs" ></i>
           </button>
         </div>
       </div>

@@ -11,6 +11,20 @@
         height: 250px;
 
     }
+    .eye{
+        position: relative;
+        left: 35%;
+        top:5%;
+        z-index: 1;
+        i{  
+            font-size: 1.5rem;
+            color:rgb(171, 181, 189);
+        }
+        i:hover{
+            color: rgb(76, 227, 76);
+            font-size: 1.6rem;
+        }
+    }
     .products__item--title {
         display: flex;
         justify-content: space-around;
@@ -37,6 +51,7 @@
             border-radius:50px;
             font-size: 1.4rem;
             border:none;
+            width: 35px;
         }
         .title--btn:hover{
             font-size:1.5rem;
@@ -45,5 +60,12 @@
                 color:aliceblue;
             }
         }
+    }
+}
+.product__item:hover{
+    box-shadow:0 0 2px green;
+    img {
+    //    filter: drop-shadow(0 0 2px green);
+        transform: scale(1.02);
     }
 }
