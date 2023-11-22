@@ -7,105 +7,101 @@ import "./Header.scss";
 const Header = () => {
   return (
     <>
-      <div className="header container-fluid   ">
-        <div className="container-xxl align-items-center text-center bg-light  ">
-          <div
-            className="row d-flex align-items-center text-center justify-content-between"
-            style={{ height: "42px" }}
-          >
-            <div className="col-3">
-              <i
-                className="fa-solid fa-location-dot fa-xl"
-                style={{ color: " #898a8b" }}
-              />
-              <span> Hải Châu ,Đà Nẵng ,Việt Nam</span>
-            </div>
-            <div className="col-5 d-flex justify-content-between  ">
-              <div className="col-4 ">
-                <div className="language-container">
-                  <span className="current-language">Tiếng Việt </span>
-                  <i className="fa-solid fa-chevron-down fa-sm"></i>
+     <header className="header">
+        {/* =================Header__top================ */}
+          <div className="header__top">
+             <div className="container">
+                <div className="header__top-wrap">
+                  <div className="header__top-left">
+                    <img src="assets\image\location.svg" alt="" />
+                    <span className="header__top-address">Store Location: Lincoln- 344, Illinois, Chicago, USA</span>
+                  </div>
+                  <div className="header__top-right">
+                    <div className="header__top-language-wrap">
+                      <span className="header__top-language">
+                      Eng
+                        <img src="assets\image\arrow-icon.svg" alt="icon" />
+                      </span>
+                      <span className="header__top-currency">
+                      USD
+                        <img src="assets\image\arrow-icon.svg" alt="icon" />
+                      </span>
+                    </div>
+                    <div className="header__top-right-separate"></div>
+                    <div className="header__top-auth">
+                      <Link to="#" className="header__top-sign header__top-sign-in">Sign In</Link>
+                      <div className="header__top-auth-separate">/</div>
+                      <Link to="#" className="header__top-sign header__top-sign-up">Sign Up</Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              |
-              <div className="col-8 ">
-                <span>Đăng Nhập </span>/<span> Đăng Ký</span>
+             </div>
+          </div>
+          {/* ===================== Header__mid =================*/}
+          <div className="header__midle">
+           <div className="container">
+             <div className="header__midle-wrap">
+                <figure className="header__midle-logo">
+                  <img src="./assets/image/Logo.svg" alt="" />
+                  <span className="header__midle-logo-name">Ecobazar</span>
+                </figure>
+                <div className="header__midle-search">
+                  <form className="header__midle-search-form">
+                    <div className="header__midle-search-wrap">
+                      <label htmlFor="header__search" className="header__midle-search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                      </label>
+                      <input type="search" name="search" placeholder="Search" id="header__search" className="header__midle-search-input"/>
+                    </div>
+                    <button className="header__midle-button">Search</button>
+                  </form>
+                </div>
+                <div className="header__midle-cart">
+                  <figure className="header__midle-cart-icon">
+                    <img src="./assets/image/cart.svg" alt="" />
+                    <span className="header__middle-cart-count">0</span>
+                  </figure>
+                  <div className="header__midle-cart-info">
+                    <span className="header__midle-cart-title">Shopping cart:</span>
+                    <span className="header__midle-cart-price">$57.00</span>
+                  </div>
+                </div>
+             </div>
+           </div>
+          </div>
+          <div className="header__bottom">
+            <div className="container">
+              <div className="header__bottom-wrap">
+                <nav className="header__nav-bar">
+                  <ul className="header__nav-list">
+                    <li>
+                      <Link className="header__nav-link header__nav-link--active">Home</Link>
+                    </li>
+                    <li>
+                      <Link className="header__nav-link">Shop</Link>
+                    </li>
+                    <li>
+                      <Link className="header__nav-link">Pages</Link>
+                    </li>
+                    <li>
+                      <Link className="header__nav-link">Blog</Link>
+                    </li>
+                    <li>
+                      <Link className="header__nav-link">About Us</Link>
+                    </li>
+                    <li>
+                      <Link className="header__nav-link">Contact Us</Link>
+                    </li>
+                  </ul>
+                </nav>
+                <a href="#!" className="header__bottom-phone">
+                  <i class="fa-solid fa-phone-volume"></i>
+                  <span className="header__bottom-phone-number">(219) 555-0114</span>
+                </a>
               </div>
             </div>
           </div>
-          <div
-            className="row d-flex align-items-center text-center justify-content-around "
-            style={{ height: "93px" }}
-          >
-            <div className="col-2">
-              <img
-                src="https://suno.vn/blog/wp-content/uploads/2014/12/nike-lich-su-thiet-ke-logo.jpg"
-                alt="logo"
-                height={"50px"}
-              />
-            </div>
-            <div className="col-5 d-flex ">
-              <input
-                type="search"
-                placeholder="Tìm Kiếm Sản Phẩm "
-                style={{ width: "500px" }}
-              />
-              <Button
-                title={
-                  <i
-                    className="fa-solid fa-magnifying-glass fa-xl"
-                    style={{ color: "black" }}
-                  />
-                }
-              />
-            </div>
-            <div className="col-3 d-flex justify-content-center align-items-center ">
-              <div className="col-2  ">
-                <i
-                  className="fa-solid fa-store fa-2xl"
-                  style={{ color: "#030303" }}
-                ></i>
-              </div>
-              <div className="col-6">
-                <span>
-                  <b>Giỏ Hàng</b>
-                </span>
-                <br />
-                <span>
-                  <i>000000 VNĐ</i>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="container-fluid align-items-center d-flex justify-content-center "
-          style={{ backgroundColor: "black", height: "60px" }}
-        >
-          <nav
-            className="row container-xxl align-items-center text-center justify-content-around "
-            style={{ color: "white", height: "60px" }}
-          >
-            <div
-              className="col-6 d-flex align-items-center justify-content-around "
-              style={{ fontSize: "1.2rem", color: "#fff" }}
-            >
-              {/* link  */}
-              <Link to="/">
-                <span>Trang Chủ</span>
-              </Link>
-              <Link to="/products">
-                <span>Sản Phẩm</span>
-              </Link>
-          
-            </div>
-            <div className="col-4 form-control-lg ">
-              <i className="fa-solid fa-phone"></i> 0789006730
-            </div>
-          </nav>
-        </div>
-      </div>
-      <div style={{ width: "100px", height: "200px" }}></div>
+     </header>
     </>
   );
 };

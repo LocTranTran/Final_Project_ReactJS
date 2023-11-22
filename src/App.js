@@ -12,13 +12,13 @@ const App = () => {
     <CartProvider>
       <BrowserRouter>
         <Header />
-        <div className="container-xxl text-center">
+        {/* <div className="container-xxl text-center">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
           </Routes>
         </div>
-        <Footer />
+        <Footer /> */}
       </BrowserRouter>
     </CartProvider>
   );
