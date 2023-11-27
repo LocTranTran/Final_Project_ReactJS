@@ -1,37 +1,48 @@
-import React,{useState} from 'react'
+import React, { useState ,useContext } from 'react'
 import './category.scss'
 import Radio from './Radio';
-const Category = ({ onFilterChange }) => {
- const [priceFilter, setPriceFilter] = useState("");
-const handlePriceFilterChange = (event) => {
-  onFilterChange(event);
-};  return (
-    <div className="border col-3">
+import { CartContext } from '../../utils/CartContext';
+const Category = () => {
+      const { handlePriceFilter, handleNameFilter } = useContext(CartContext);
+
+  const [priceFilter, setPriceFilter] = useState("");
+  const handlePriceFilters = (event) => {
+    handlePriceFilter(event);
+    handleNameFilter(event);
+  };
+  return (
+    <div className="border d-flex justify-content-center col-3" style={{height:'500px'}}>
       <br />
-      <h2>Phân loại</h2>
-      <div style={{ paddingTop: "50px" }}>
+      {/* <h2>Phân loại</h2> */}
+      <div style={{ paddingTop: "20px" }}>
         <h4>Sản Phẩm</h4>
+        <Radio
+          onChange={handleNameFilter}
+          label="Tất Cả "
+          value="all"
+          checked={priceFilter === "all"}
+        />
         <h4>Giá</h4>
         <Radio
-          onChange={handlePriceFilterChange}
+          onChange={handlePriceFilters}
           label="Tất Cả"
           value="all"
           checked={priceFilter === "all"}
         />
         <Radio
-          onChange={handlePriceFilterChange}
+          onChange={handlePriceFilters}
           label="dưới 100k"
           value="< 100k"
           checked={priceFilter === "< 100k"}
         />
         <Radio
-          onChange={handlePriceFilterChange}
+          onChange={handlePriceFilters}
           label="100k đến 200k"
           value="100 - 200k"
           checked={priceFilter === "100 - 200k"}
         />
         <Radio
-          onChange={handlePriceFilterChange}
+          onChange={handlePriceFilters}
           label="Trên 300k"
           value="> 300k"
           checked={priceFilter === "> 300k"}

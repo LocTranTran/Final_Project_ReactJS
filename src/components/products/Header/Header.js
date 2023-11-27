@@ -75,10 +75,10 @@ const Header = () => {
                 <nav className="header__nav-bar">
                   <ul className="header__nav-list">
                     <li>
-                      <Link className="header__nav-link header__nav-link--active">Home</Link>
+                      <Link to="/" className="header__nav-link header__nav-link--active">Home</Link>
                     </li>
                     <li>
-                      <Link className="header__nav-link">Shop</Link>
+                      <Link to="/products" className="header__nav-link">Shop</Link>
                     </li>
                     <li>
                       <Link className="header__nav-link">Pages</Link>

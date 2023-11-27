@@ -1,12 +1,13 @@
 import React from "react";
 import ProductList from "./Products/ProductList";
+import Category from "./Products/Category";
 
 const Products = () => {
+
   return (
-    <div>
-      <div className="d-flex justify-content-between">
-        <ProductList numItem={18}  />
-      </div>
+    <div className="d-flex">
+      <Category/>
+      <ProductList />
     </div>
   );
 };

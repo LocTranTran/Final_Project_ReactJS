@@ -8,15 +8,11 @@ const Home = () => {
     <div>
       {/* Component Banner hiển thị 3 hình ảnh */}
       <Banner />
-
       {/* Component Products hiển thị danh sách sản phẩm */}
-      <Products numItem={8} />
 
+      <Products/>
       {/* Component Grid hiển thị bố cục dạng lưới */}
       <Gird />
-
-      {/* Component Products khác hiển thị danh sách sản phẩm khác */}
-      <Products numItem={8} />
     </div>
   );
 };

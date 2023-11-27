@@ -1,10 +1,6 @@
 import React, { memo } from 'react'
-import PropTypes from "prop-types"; 
 import './ProductsItems.scss'
 const ProductsItems = ({ product }) => {
-  ProductsItems.propTypes = {
-    product: PropTypes.object.isRequired,
-  };
   return (
     <div className="product__item border">
       <div className="products__item--img">
