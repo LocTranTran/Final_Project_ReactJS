@@ -1,128 +1,94 @@
-import React,{memo} from 'react';
+import React, {memo} from 'react';
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
+
 const Footer = () => {
   return (
-    <div className='container-fluid'>
-    <MDBFooter bgColor='light' className='text-center text-lg-center text-muted'>
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-        <div className='me-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks:</span>
-        </div>
+    <div className="container-fluid "style={{backgroundColor:'#222',fontSize:'1.2rem',color:'#DDD'}}>
+      <MDBFooter
+        className="container-xxl text-center text-lg-left"
+      >
+        <MDBContainer className="p-4 pb-0">
+          <MDBRow>
+            <MDBCol md="3" lg="4" xl="3" className="mx-auto mt-3">
+              <h6 className="text-uppercase mb-4 font-weight-bold">
+                <MDBIcon icon="store" className="mr-3" />
+                Cửa hàng ABC
+              </h6>
+              <p>Địa chỉ: 123 Đường Cách Mạng Tháng 8, Quận 1, TP.HCM</p>
+              <p>Số điện thoại: 1900 1234</p>
+              <p>Email: support@shopabc.com</p>
+            </MDBCol>
 
-        <div>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="facebook-f" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="twitter" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="google" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="instagram" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="linkedin" />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon fab icon="github" />
-          </a>
-        </div>
-      </section>
-
-      <section className=''>
-        <MDBContainer className='text-center text-md-start mt-5'>
-          <MDBRow className='mt-3'>
-            <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>
-                <MDBIcon icon="gem" className="me-3" />
-                Company name
+            <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
+              <h6 className="text-uppercase mb-4 font-weight-bold">
+                Về chúng tôi
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
-              </p>
-            </MDBCol>
-
-            <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Angular
+                <a href="#!" className="text-reset">
+                  Giới thiệu
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  React
+                <a href="#!" className="text-reset">
+                  Tuyển dụng
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  Vue
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Laravel
+                <a href="#!" className="text-reset">
+                  Chính sách bảo mật
                 </a>
               </p>
             </MDBCol>
 
-            <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Useful links</h6>
+            <MDBCol md="3" lg="2" xl="2" className="mx-auto mt-3">
+              <h6 className="text-uppercase mb-4 font-weight-bold">
+                Hỗ trợ khách hàng
+              </h6>
               <p>
-                <a href='#!' className='text-reset'>
-                  Pricing
+                <a href="#!" className="text-reset">
+                  Phương thức thanh toán
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  Settings
+                <a href="#!" className="text-reset">
+                  Chính sách đổi trả
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  Orders
-                </a>
-              </p>
-              <p>
-                <a href='#!' className='text-reset'>
-                  Help
+                <a href="#!" className="text-reset">
+                  Chính sách bảo hành
                 </a>
               </p>
             </MDBCol>
 
-            <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
-              <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
+            <hr className="w-100 clearfix d-md-none" />
+
+            <MDBCol md="4" lg="3" xl="3" className="mx-auto mt-3">
+              <h6 className="text-uppercase mb-4 font-weight-bold">
+                Kết nối với chúng tôi
+              </h6>
               <p>
-                <MDBIcon icon="home" className="me-2" />
-                New York, NY 10012, US
+                <MDBIcon fab icon="facebook" className="mr-3" /> Facebook
               </p>
               <p>
-                <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
+                <MDBIcon fab icon="twitter" className="mr-3" /> Twitter
               </p>
               <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                <MDBIcon fab icon="youtube" className="mr-3" /> Youtube
               </p>
               <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
+                <MDBIcon fab icon="instagram" className="mr-3" /> Instagram
               </p>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
-      </section>
 
-      <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-        © 2021 Copyright:
-        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
-        </a>
-      </div>
-    </MDBFooter>    </div>
-  )
+        <div className="text-center py-3">
+          <p>&copy; {new Date().getFullYear()} Copyright: Cửa hàng ABC</p>
+        </div>
+      </MDBFooter>
+    </div>
+  );
 }
-//. memo giúp tránh việc render lại thành phần khi các props không thay đổi.
-export default memo(Footer)
- 
+
+export default memo(Footer);

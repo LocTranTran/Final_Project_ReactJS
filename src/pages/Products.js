@@ -1,12 +1,14 @@
-import React,{memo} from 'react'
+import React from "react";
+import ProductList from "./Products/ProductList";
 
 const Products = () => {
   return (
     <div>
-      <h1>Products</h1>
+      <div className="d-flex justify-content-between">
+        <ProductList numItem={18}  />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-//. memo giúp tránh việc render lại thành phần khi các props không thay đổi.
-export default memo(Products)
+export default Products;

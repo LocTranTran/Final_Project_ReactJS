@@ -1,11 +1,25 @@
-import React,{memo} from 'react'
+import React, { memo } from "react";
+import Banner from "./Home/Banner";
+import Products from "./Products/ProductList";
+import Gird from "./Home/Gird";
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      {/* Component Banner hiển thị 3 hình ảnh */}
+      <Banner />
+
+      {/* Component Products hiển thị danh sách sản phẩm */}
+      <Products numItem={8} />
+
+      {/* Component Grid hiển thị bố cục dạng lưới */}
+      <Gird />
+
+      {/* Component Products khác hiển thị danh sách sản phẩm khác */}
+      <Products numItem={8} />
     </div>
-  )
-}
-//. memo giúp tránh việc render lại thành phần khi các props không thay đổi.
-export default memo(Home)
+  );
+};
+
+// memo đảm bảo rằng component không được render lại khi không có sự thay đổi trong props.
+export default memo(Home);
