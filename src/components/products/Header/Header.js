@@ -53,7 +53,7 @@ const Header = () => {
                       </label>
                       <input type="search" name="search" placeholder="Search" id="header__search" className="header__midle-search-input"/>
                     </div>
-                    <button className="header__midle-button">Search</button>
+                    <button type= 'button ' className="header__midle-button">Search</button>
                   </form>
                 </div>
                 <div className="header__midle-cart">
