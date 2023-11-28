@@ -13,7 +13,7 @@ export default function Banner() {
                 <p className="banner__items-sub-sale">Free shipping on all your order. we deliver, you enjoy</p>
                 <button className="banner__items-button">
                   Shop now
-                  <img src="./assets/image/arrow.svg" alt="" />
+                  <img src="../assets/image/banner.svg" alt=""/>
                   </button>
               </div>
               <figure className="banner__items-img-block">
