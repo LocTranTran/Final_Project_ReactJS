@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './Header.scss'
+
 import Button from "../../common/Button";
 
 import "./Header.scss";

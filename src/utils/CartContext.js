@@ -13,7 +13,7 @@ export function CartProvider({ children, numItem }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://fakestoreapi.com/products");
+        const response = await axios.get("https://64818aa329fa1c5c503191e0.mockapi.io/addres");
         setProducts(response.data);
         setDisplayedItems(response.data.slice(0, numItem));
       } catch (error) {
