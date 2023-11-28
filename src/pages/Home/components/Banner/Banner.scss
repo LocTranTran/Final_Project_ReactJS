@@ -1,6 +1,5 @@
 @import '/src/pages/Style.scss';
 .banner {
-    position: relative;
     width: 1520px;
     max-width: calc( 100% - 20px);
     margin-right: auto;
@@ -8,6 +7,7 @@
     margin-top: 24px;
     border-radius: 8px;
     &__list {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -18,7 +18,7 @@
         align-items: center;
         flex-shrink: 0;
         width: 100%;
-        height: 804px;
+        height: 750px;
         padding-left: 95px;
         background-color: #EDF2EE;
         border-radius: 8px;
@@ -82,7 +82,7 @@
     }
     &__dots-gr {
         position: absolute;
-        bottom: 104px;
+        bottom: 80px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -102,5 +102,43 @@
             background-color: $primary-color;
             border-radius: 999px;
         }
+    }
+    &__featured {
+        position: relative;
+        z-index: 2;
+        width: 91%;
+        margin-right: auto;
+        margin-left: auto;
+        // margin-top: -50px;
+        background-color: #fff;
+        border-radius: 8px;
+        transform: translateY(-50%);
+    }
+    &__featured-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      
+        padding: 40px;
+    }
+    &__featured-items {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        &-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        &-sub {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+    }
+    &__featured-items-body {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 }

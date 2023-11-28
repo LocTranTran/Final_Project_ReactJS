@@ -50,12 +50,45 @@ export default function Banner() {
                 <img src="./assets/image/img-main.png" alt="" />
               </figure>
             </section>
-          </div>
-          <div className="banner__dots-gr">
+            <div className="banner__dots-gr">
             <div className="banner__dots-items banner__dots-items--active"></div>
             <div className="banner__dots-items"></div>
             <div className="banner__dots-items"></div>
           </div>
+          </div>
+          
+           <div className="banner__featured">
+            <div className="banner__featured-list">
+              <div className="banner__featured-items">
+                <img src='./assets/image/icon-ship.svg' alt="" className="banner__featured-icon" />
+                <div className="banner__featured-items-body">
+                  <span className="banner__featured-items-title">Free Shipping</span>
+                  <span className='banner__featured-items-sub'>Free shipping on all your order</span>
+                </div>
+              </div>
+              <div className="banner__featured-items">
+                <img src="./assets/image/icon-suport.svg" alt="" className="banner__featured-icon" />
+                <div className="banner__featured-items-body">
+                  <span className="banner__featured-items-title">Free Shipping</span>
+                  <span className='banner__featured-items-sub'>Free shipping on all your order</span>
+                </div>
+              </div>
+              <div className="banner__featured-items">
+                <img src="./assets/image/icon-bag.svg" alt="" className="banner__featured-icon" />
+                <div className="banner__featured-items-body">
+                  <span className="banner__featured-items-title">Free Shipping</span>
+                  <span className='banner__featured-items-sub'>Free shipping on all your order</span>
+                </div>
+              </div>
+              <div className="banner__featured-items">
+                <img src="./assets/image/icon-pack.svg" alt="" className="banner__featured-icon" />
+                <div className="banner__featured-items-body">
+                  <span className="banner__featured-items-title">Free Shipping</span>
+                  <span className='banner__featured-items-sub'>Free shipping on all your order</span>
+                </div>
+              </div>
+            </div>
+           </div>
         </div>
     </>
   );
