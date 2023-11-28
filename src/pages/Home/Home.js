@@ -1,12 +1,12 @@
 import React, { memo } from "react";
-import Products from "../Products/ProductList";
 import Gird from "./Gird";
 import Banner from "./Banner";
+import ProductList from "../Products/ProductList";
 const Home = () => {
   return (
-    <div>
+    <div className="d-flex justify-content-center align-items-center  flex-column ">
       <Banner />
-      <Products />
+      <ProductList numItem={8} />
       {/* Component Grid hiển thị bố cục dạng lưới */}
       <Gird />
     </div>

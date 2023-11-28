@@ -14,7 +14,7 @@ const ProductsItems = ({ product }) => {
         </div>
         <div>
           <button className="title--btn">
-            <i className="fa-solid fa-basket-shopping fa-xs" ></i>
+            <i className="fa-solid fa-basket-shopping fa-xl" ></i>
           </button>
         </div>
       </div>

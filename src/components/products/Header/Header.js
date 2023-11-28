@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Button from "../../common/Button";
-
 import "./Header.scss";
 const Header = () => {
   return (
@@ -95,7 +93,7 @@ const Header = () => {
                   </ul>
                 </nav>
                 <a href="#!" className="header__bottom-phone">
-                  <i class="fa-solid fa-phone-volume"></i>
+                  <i className="fa-solid fa-phone-volume"></i>
                   <span className="header__bottom-phone-number">(219) 555-0114</span>
                 </a>
               </div>

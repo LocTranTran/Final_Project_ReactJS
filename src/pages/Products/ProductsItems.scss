@@ -1,46 +1,31 @@
 .product__item {
-    width: 302px;
-    height: 407px;
+    width: 248px;
+    height: 340px;
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    justify-content: center;
+    align-items: center;
+    border-radius:3px;
     img {
-        margin-top: 10px;
+        // margin-top: 10px;
         width:220px;
         height: 220px;
 
     }
-    .eye{
-        position: relative;
-        left: 35%;
-        top:5%;
-        z-index: 1;
-        i{  
-            font-size: 1.5rem;
-            color:rgb(171, 181, 189);
-        }
-        i:hover{
-            color: rgb(76, 227, 76);
-            font-size: 1.6rem;
-        }
-    }
     .products__item--title {
         display: flex;
-        justify-content: space-around;
-        height: 123px;
+        justify-content: space-evenly;
+        height: 91px;
         align-items:center;
 
         .title--info {
             display: flex;
             flex-direction: column;
-            width: 200px;
+            // width: 200px;
             height: 104px;
             .title--info-name {
-                font-weight: bolder;
-                width: 200px;
-                height: 100px;
+                height: 50px;
             }
             .title--info-price {
                 font-family: 'Courier New', Courier, monospace;
@@ -52,7 +37,8 @@
             border-radius:50px;
             font-size: 1.4rem;
             border:none;
-            width: 35px;
+            width: 40px;
+            height: 40px;
         }
         .title--btn:hover{
             font-size:1.5rem;

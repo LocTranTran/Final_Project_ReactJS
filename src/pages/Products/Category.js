@@ -11,7 +11,7 @@ const Category = () => {
     handleNameFilter(event);
   };
   return (
-    <div className="border d-flex justify-content-center col-3" style={{height:'500px'}}>
+    <div className="border d-flex justify-content-center col-2" style={{height:'500px'}}>
       <br />
       {/* <h2>Phân loại</h2> */}
       <div style={{ paddingTop: "20px" }}>
