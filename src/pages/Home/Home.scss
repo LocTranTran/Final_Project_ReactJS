@@ -1,0 +1,16 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+// ============ Color ================
+$header-top-color: #666;
+$font-primary: 'Poppins', sans-serif;
+$primary-color: #00B207;
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: $font-primary;
+    font-size: 1.6rem;
+}

@@ -1,22 +1,11 @@
 import React, { memo } from "react";
-import Banner from "./Home/Banner";
-import Products from "./Products/ProductList";
-import Gird from "./Home/Gird";
+import Banner from "./Home/components/Banner/Banner";
 
 const Home = () => {
   return (
     <div>
       {/* Component Banner hiển thị 3 hình ảnh */}
       <Banner />
-
-      {/* Component Products hiển thị danh sách sản phẩm */}
-      <Products numItem={8} />
-
-      {/* Component Grid hiển thị bố cục dạng lưới */}
-      <Gird />
-
-      {/* Component Products khác hiển thị danh sách sản phẩm khác */}
-      <Products numItem={8} />
     </div>
   );
 };
