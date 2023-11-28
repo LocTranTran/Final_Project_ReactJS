@@ -1,14 +1,14 @@
 import React, { memo } from "react";
-import Products from "./Products/ProductList";
-// import Gird from "./Home/";
-import Banner from "./Home/Banner";
+import Products from "../Products/ProductList";
+import Gird from "./Gird";
+import Banner from "./Banner";
 const Home = () => {
   return (
     <div>
-      <Banner/>
-      <Products/>
+      <Banner />
+      <Products />
       {/* Component Grid hiển thị bố cục dạng lưới */}
-      {/* <Gird /> */}
+      <Gird />
     </div>
   );
 };

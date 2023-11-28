@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/products/Header/Header";
 // import Footer from "./components/products/Footer/Footer";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 // import Products from "./pages/Products";
 import { CartProvider } from "./utils/CartContext";
 
@@ -12,7 +12,7 @@ const App = () => {
     <CartProvider>
       <BrowserRouter>
         <Header />
-        <Home   />
+        <Home />
       </BrowserRouter>
     </CartProvider>
   );

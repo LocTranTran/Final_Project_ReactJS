@@ -1,0 +1,25 @@
+
+.girds{
+    padding: 50px 0;
+.gird {
+    width: 424px;
+    height:536px;
+    border-radius: 5px;
+    background-size: cover;
+    .btn-gird {
+        position: relative;
+        border-radius: 50px;
+        width: 150px;
+        top: 50%;
+    }
+    &:nth-child(1){
+        background-image:url('https://mega.com.vn/media/news/1205_hnhnnmytnhanimeYourname1.jpg') ;
+    }
+    &:nth-child(2){
+        background-image:url('https://imgt.taimienphi.vn/cf/Images/np/2022/7/25/hinh-nen-4k-background-4k-dep-nhat-13.jpg') ;
+    }
+    &:nth-child(3){
+        background-image:url('https://mega.com.vn/media/news/0106_hinh-nen-4k-may-tinh35.jpg') ;
+    }
+    
+}}
