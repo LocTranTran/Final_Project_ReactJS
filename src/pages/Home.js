@@ -1,10 +1,11 @@
 import React, { memo } from "react";
 import Products from "./Products/ProductList";
 import Gird from "./Home/Gird";
-
+import Banner from "./Home/Banner";
 const Home = () => {
   return (
     <div>
+      <Banner/>
       <Products/>
       {/* Component Grid hiển thị bố cục dạng lưới */}
       <Gird />
