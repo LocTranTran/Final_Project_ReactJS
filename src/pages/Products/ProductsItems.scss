@@ -20,29 +20,38 @@
         align-items:center;
 
         .title--info {
+            padding-left: 20px;
             display: flex;
             flex-direction: column;
-            // width: 200px;
+            justify-content: center;
             height: 104px;
             .title--info-name {
-                height: 50px;
+                display: flex;
+                align-items: center;
+                // height: 30px;
+                font-size: 1.2rem;
             }
             .title--info-price {
-                font-family: 'Courier New', Courier, monospace;
-                font-weight: bold;
-                margin-right: 135px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-size: 1.2rem;
+                font-weight: 500;
+                padding:10px 0;
+            }
+            .title--info-des{
+                font-size: 0.8rem;
+
             }
         }
         .title--btn {
+            margin-right: 20px;
             border-radius:50px;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             border:none;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
         }
         .title--btn:hover{
-            font-size:1.5rem;
-            background-color: rgb(32, 239, 32);
+            background-color: rgb(131, 251, 131);
             i {
                 color:aliceblue;
             }
@@ -50,9 +59,8 @@
     }
 }
 .product__item:hover{
-    box-shadow:0 0 2px green;
-    img {
-    //    filter: drop-shadow(0 0 2px green);
-        transform: scale(1.02);
+    box-shadow:0 0 2px rgb(11, 225, 11);
+    .title--info-name{
+        color:green;
     }
 }

@@ -8,18 +8,27 @@
     background-size: cover;
     .btn-gird {
         position: relative;
-        border-radius: 50px;
-        width: 150px;
-        top: 50%;
+        border-radius: 30px;
+        width: 170px;
+        height: 65px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-60%);
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .btn-gird:hover{
+        color:rgb(19, 232, 19);
+        background-color: rgb(255, 255, 255);
     }
     &:nth-child(1){
-        background-image:url('https://mega.com.vn/media/news/1205_hnhnnmytnhanimeYourname1.jpg') ;
+        background-image:url('../../assets/image/gird1.jpg') ;
     }
     &:nth-child(2){
-        background-image:url('https://imgt.taimienphi.vn/cf/Images/np/2022/7/25/hinh-nen-4k-background-4k-dep-nhat-13.jpg') ;
+        background-image:url('../../assets/image/gird3.jpg') ;
     }
     &:nth-child(3){
-        background-image:url('https://mega.com.vn/media/news/0106_hinh-nen-4k-may-tinh35.jpg') ;
+        background-image:url('../../assets/image/gird2.1.jpg')  ;
     }
     
 }}

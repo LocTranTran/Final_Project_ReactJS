@@ -1,0 +1,32 @@
+// Cart.scss
+
+.cart {
+    position: fixed;
+    top: 10px;
+    right: -350px;
+    width: 320px;
+    padding: 20px;
+    transition: 0.3s right ease-out;
+    
+    // Styling
+    
+    &.show {
+      right: 10px;
+    }
+    
+    &__items {
+  
+    }
+  
+    &__total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;    
+    }
+  
+    &__checkout-btn {
+      background: black;
+      color: white;
+      padding: 10px 15px;
+    } 
+  }

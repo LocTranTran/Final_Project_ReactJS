@@ -5,7 +5,7 @@ import Category from "./Category";
 const Products = () => {
   return (
     <div className="d-flex justify-content-center ">
-      <Category />
+      {/* <Category /> */}
       <ProductList numItem={20} />
     </div>
   );

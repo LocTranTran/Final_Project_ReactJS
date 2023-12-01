@@ -21,7 +21,7 @@ export default function Banner() {
               </button>
             </div>
             <figure className="banner__items-img-block">
-              <img src="./assets/image/img-main.png" alt="" />
+              <img src="./assets/image/img-main.pngs" alt="" />
             </figure>
           </section>
           <section className="banner__items">

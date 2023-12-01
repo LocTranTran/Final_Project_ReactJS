@@ -9,7 +9,7 @@ const ProductsItems = ({ product }) => {
       <div className="products__item--title ">
         <div className="title--info d-flex ">
           <span className="title--info-name">{product.name}</span>
-          <span className="title--info-price">{product.price}</span>
+          <span className="title--info-price">{product.price} VND</span>
           <span className="title--info-des">{product.description}</span>
         </div>
         <div>
