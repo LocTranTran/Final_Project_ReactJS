@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { CartContext } from "../../../utils/CartContext";
 import "./Header.scss";
 const Header = () => {
+  const { handleSearchInputChange, handleSearchButtonClick,isLoading } = useContext(CartContext);
   return (
     <>
      <header className="header">
@@ -49,9 +50,9 @@ const Header = () => {
                       <label htmlFor="header__search" className="header__midle-search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                       </label>
-                      <input type="search" name="search" placeholder="Search" id="header__search" className="header__midle-search-input"/>
+                      <input onChange={handleSearchInputChange}  name="search" placeholder="Search" id="header__search" className="header__midle-search-input" />
                     </div>
-                    <button type='button' className="header__midle-button">Search</button>
+                    <button onClick={handleSearchButtonClick} disabled={isLoading} type="button" className="header__midle-button">Search</button>
                   </form>
                 </div>
                 <div className="header__midle-cart">
