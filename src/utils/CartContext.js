@@ -1,70 +1,83 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
-// tạo 1 Context có tên là CartContext
+// Tạo một Context có tên là CartContext
 export const CartContext = createContext();
-// Tạo hàm CartProvider
+
+// Tạo hàm CartProvider, nhận vào các thành phần con và số lượng sản phẩm hiển thị
 export function CartProvider({ children, numItem }) {
-  // tạo state
-  const [products, setProducts] = useState([]); //state sản phẩm 
-  const [displayedItems, setDisplayedItems] = useState([]);//state hiện thị sản phẩm 
-  const [filterProduct, setFilterProduct] = useState([]);//state lọc sản phẩm
-  // lấy API sản phẩm
+  // Tạo các state cần thiết
+  const [isLoading ,setIsLoading] = useState(false);
+  const [products, setProducts] = useState([]); // Danh sách sản phẩm
+  const [displayedItems, setDisplayedItems] = useState([]); // Danh sách sản phẩm hiển thị
+  const [filterProduct, setFilterProduct] = useState([]); // Danh sách sản phẩm sau khi lọc
+  const [searchItem, setSearchItem] = useState(''); // Tìm Kiếm sản phẩm 
+
+  // Sử dụng useEffect để lấy dữ liệu từ API khi component được render
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:8080/v1/products");
-        setProducts(response.data);
-        setDisplayedItems(response.data.slice(0, numItem));
+        setProducts(response.data); // Cập nhật danh sách sản phẩm
+        setDisplayedItems(response.data.slice(0, numItem)); // Cập nhật danh sách sản phẩm hiển thị
       } catch (error) {
         console.log(error);
       }
     };
+
     fetchData();
   }, [numItem]);
 
-  // Lấy sự kiện giá
+    // Hàm xử lý việc tìm sản phẩm theo tên
+  const handleSearchInputChange = (event) => {
+    setSearchItem(event.target.value.toLowerCase());
+  };
+  const handleSearchButtonClick = () => {
+    setIsLoading(true);
+    setTimeout(() =>{
+      const filteredItems = products.filter((product) =>
+        product.name.toLowerCase().includes(searchItem.toLowerCase())
+      );
+      setFilterProduct(filteredItems);
+      setDisplayedItems(filteredItems.slice(0, numItem));  
+      setIsLoading(false);  
+    },1000)
+  };
+  
+  // Hàm xử lý việc lọc sản phẩm theo giá
   const handlePriceFilter = (event) => {
     const selectPrice = event.target.value;
-    // các điều kiện của giá
+    let filteredItems = [...products];
+
     if (selectPrice === "all") {
-      setFilterProduct(products);
+      setFilterProduct([]); // Nếu chọn "Tất cả", không áp dụng bộ lọc
     } else if (selectPrice === "< 100k") {
-      const filtered = products.filter((product) => product.price < 100);
-      setFilterProduct(filtered);
+      filteredItems = filteredItems.filter((product) => product.price < 100000); // Lọc sản phẩm có giá dưới 100k
     } else if (selectPrice === "100 - 200k") {
-      const filtered = products.filter(
-        (product) => product.price >= 100 && product.price <= 200
-      );
-      setFilterProduct(filtered);
+      filteredItems = filteredItems.filter(
+        (product) => product.price >= 100000 && product.price <= 200000
+      ); // Lọc sản phẩm có giá từ 100k đến 200k
     } else if (selectPrice === "> 300k") {
-      const filtered = products.filter((product) => product.price >= 300);
-      setFilterProduct(filtered);
+      filteredItems = filteredItems.filter((product) => product.price >= 300000); // Lọc sản phẩm có giá trên 300k
     }
-    setDisplayedItems(filterProduct);
+    setTimeout(() => {
+      
+      setFilterProduct(filteredItems);
+      setDisplayedItems(filteredItems.slice(0, numItem)); // Cập nhật danh sách sản phẩm hiển thị sau khi lọc và cắt số lượng sản phẩm
+    },1000)
   };
 
-  // Lấy sử kiện của tên 
-  const handleNameFilter = (event) => {
-    const selectName = event.target.value;
-    // điêuf kiện của tên sản phẩm 
-    if (selectName === "all") {
-      setFilterProduct(products)
-    } else if (selectName === "áo") {
-      const filtered = products.filter((product) => 
-        product.name.includes("áo")
-      )
-      setFilterProduct(filtered);
-    }else if (selectName === "quần") {
-      const filtered = products.filter((product) => 
-        product.name.includes("quần")
-      )
-      setFilterProduct(filtered);
-    }
-  }
+  // Trả về CartContext.Provider với giá trị context là displayedItems và handlePriceFilter
   return (
     <CartContext.Provider
-      value={{ displayedItems, handlePriceFilter, handleNameFilter }}
+      value={{
+        displayedItems,
+        handlePriceFilter,
+        filterProduct,
+        handleSearchInputChange,
+        handleSearchButtonClick,
+        isLoading
+      }}
     >
       {children}
     </CartContext.Provider>

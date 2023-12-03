@@ -1,0 +1,54 @@
+.disbanded {
+    margin: 50px auto;
+    height: 360px;
+    background-color:#F9F9F7;
+    h1{
+        font-size: 3rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+    }
+    p {
+        font-size: 4rem;
+        color: rgb(76, 237, 68);
+    }
+    span {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .disbanded__time{
+        width: 500px;
+        display:flex;
+        flex-direction: column;
+        gap: 20px;
+        padding:50px 20px;
+        
+        .day {
+            margin-left:10px;
+        }
+        .btn {
+            width: 150px;
+            height:50px;
+            background-color: #00B107;
+            border-radius:50px;
+            color:#F9F9F7;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            gap: 10px;
+            i{
+                font-size: 1.5rem;
+            }
+            &:hover{
+                background-color: #18ed1f;
+
+            }
+        }
+    }
+    .disbanded__bg{
+        width: 1000px;
+        background-image: url('https://www.elle.vn/wp-content/uploads/2016/06/24/tim-hieu-ve-phong-cach-thoi-trang-toi-gian-2.jpg');
+        background-size: cover;
+    
+    }
+}
