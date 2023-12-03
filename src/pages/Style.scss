@@ -4,6 +4,7 @@ $font-primary: 'Poppins', sans-serif;
 $primary-color: #00B207;
 $color-title: #0000;
 $warning-color: #FF8A00;
+$color-items: #4D4D4D;
 *,
 ::before,
 ::after {
@@ -16,4 +17,14 @@ html {
 body {
     font-family: $font-primary;
     font-size: 1.6rem;
+    // background-color: #F4F4F4;
+}
+
+// Commons
+
+.container {
+  width: 1320px;
+  max-width: calc(100% - 45px);
+  margin-right: auto;
+  margin-left: auto;
 }

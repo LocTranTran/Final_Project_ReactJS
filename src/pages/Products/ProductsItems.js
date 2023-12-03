@@ -1,23 +1,22 @@
 import React, { memo } from 'react'
-import './ProductsItems.scss'
+import './Products.scss'
+import '../../pages/Style.scss'
 const ProductsItems = ({ product }) => {
   return (
-    <div key={product.id} className="product__item border">
-      <div className="products__item--img">
+    <div key={product.id} className="products__items">
+      <figure className="products__items--img">
         <img src={product.images} alt="" />
-      </div>
-      <div className="products__item--title ">
-        <div className="title--info d-flex ">
-          <span className="title--info-name">{product.name}</span>
-          <span className="title--info-price">{product.price} VND</span>
-          <span className="title--info-des">{product.description}</span>
+      </figure>
+        <div className="products__items-info">
+          <h4 className="products__items-name">{product.name}</h4>
+          <span className="products__items-price">{product.price} VND</span>
+          {/* <span className="title--info-des">{product.description}</span> */}
         </div>
         <div>
-          <button className="title--btn">
+          {/* <button className="title--btn">
             <i className="fa-solid fa-basket-shopping fa-xl"></i>
-          </button>
+          </button> */}
         </div>
-      </div>
     </div>
   );
 }

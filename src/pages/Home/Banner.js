@@ -72,7 +72,6 @@ export default function Banner() {
             <div className="banner__dots-items"></div>
           </div>
         </div>
-
         <div className="banner__featured">
           <div className="banner__featured-list">
             <div className="banner__featured-items">
