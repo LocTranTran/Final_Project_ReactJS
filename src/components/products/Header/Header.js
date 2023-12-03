@@ -13,24 +13,24 @@ const Header = () => {
                 <div className="header__top-wrap">
                   <div className="header__top-left">
                     <img src="assets\image\location.svg" alt="" />
-                    <span className="header__top-address">Store Location: Lincoln- 344, Illinois, Chicago, USA</span>
+                    <span className="header__top-address">Hải Châu, Đà Nẵng, Việt Nam</span>
                   </div>
                   <div className="header__top-right">
                     <div className="header__top-language-wrap">
                       <span className="header__top-language">
-                      Eng
+                      Tiếng Việt
                         <img src="assets\image\arrow-icon.svg" alt="icon" />
                       </span>
                       <span className="header__top-currency">
-                      USD
+                      VND
                         <img src="assets\image\arrow-icon.svg" alt="icon" />
                       </span>
                     </div>
                     <div className="header__top-right-separate"></div>
                     <div className="header__top-auth">
-                      <Link to="#" className="header__top-sign header__top-sign-in">Sign In</Link>
+                      <Link to="#" className="header__top-sign header__top-sign-in">Đăng Nhập</Link>
                       <div className="header__top-auth-separate">/</div>
-                      <Link to="#" className="header__top-sign header__top-sign-up">Sign Up</Link>
+                      <Link to="#" className="header__top-sign header__top-sign-up">Đăng Ký</Link>
                     </div>
                   </div>
                 </div>
@@ -50,9 +50,9 @@ const Header = () => {
                       <label htmlFor="header__search" className="header__midle-search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                       </label>
-                      <input onChange={handleSearchInputChange}  name="search" placeholder="Search" id="header__search" className="header__midle-search-input" />
+                      <input onChange={handleSearchInputChange} type='search' name="Tìm Kiếm sản phẩm" placeholder="Search" id="header__search" className="header__midle-search-input" />
                     </div>
-                    <button onClick={handleSearchButtonClick} disabled={isLoading} type="button" className="header__midle-button">Search</button>
+                    <button onClick={handleSearchButtonClick} disabled={isLoading} type="button" className="header__midle-button"><Link to="/products" style={{color:'white'}}>Tìm Kiếm</Link></button>
                   </form>
                 </div>
                 <div className="header__midle-cart">
@@ -61,7 +61,7 @@ const Header = () => {
                     <span className="header__middle-cart-count">0</span>
                   </figure>
                   <div className="header__midle-cart-info">
-                    <span className="header__midle-cart-title">Shopping cart:</span>
+                    <span className="header__midle-cart-title">Giỏ Hàng:</span>
                     <span className="header__midle-cart-price">$57.00</span>
                   </div>
                 </div>
@@ -74,28 +74,28 @@ const Header = () => {
                 <nav className="header__nav-bar">
                   <ul className="header__nav-list">
                     <li>
-                      <Link to="/" className="header__nav-link header__nav-link--active">Home</Link>
+                      <Link to="/" className="header__nav-link header__nav-link--active">Trang Chủ</Link>
                     </li>
                     <li>
-                      <Link to="/products" className="header__nav-link">Shop</Link>
+                      <Link to="/products" className="header__nav-link">Sản Phẩm</Link>
                     </li>
                     <li>
-                      <Link className="header__nav-link">Pages</Link>
+                      <Link className="header__nav-link">Trang</Link>
                     </li>
                     <li>
-                      <Link className="header__nav-link">Blog</Link>
+                      <Link className="header__nav-link">Trợ Giúp</Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link className="header__nav-link">About Us</Link>
                     </li>
                     <li>
                       <Link className="header__nav-link">Contact Us</Link>
-                    </li>
+                    </li> */}
                   </ul>
                 </nav>
                 <a href="#!" className="header__bottom-phone">
                   <i className="fa-solid fa-phone-volume"></i>
-                  <span className="header__bottom-phone-number">(219) 555-0114</span>
+                  <span className="header__bottom-phone-number">(+84) 555-0114</span>
                 </a>
               </div>
             </div>
