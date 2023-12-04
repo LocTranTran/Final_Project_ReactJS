@@ -1,11 +1,20 @@
-
+const bodyParser = require('body-parser');
 const express = require("express");
 const cors = require("cors");
+
 const app= express();
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended :false}))
+app.use(bodyParser.json());
+// Cấu hình CORS
+app.use(cors({
+  origin: 'http://localhost:3000',
+}));
+//các Item
 const products=[
   {
     id: 1,
-    name: "Áo sơ mi tay dài nam",
+    name: "Áo sơ mi nam",
     brand: "Việt Tiến",
     price: 250000,
     colors: ["Xanh nhạt", "Trắng"],
@@ -14,7 +23,7 @@ const products=[
     quantity: 15,
     sold: 30,
     images: ["https://dongphuchaianh.vn/wp-content/uploads/2021/12/ao-so-mi-nam-dai-tay.jpg"],
-    category: "Áo sơ mi nam",
+    category: "Áo",
   },
   
   {
@@ -28,7 +37,7 @@ const products=[
     quantity: 20, 
     sold: 70,
     images: ["https://product.hstatic.net/200000195253/product/vn-11134201-23020-djywqidsh2nv17_8f767ba435784412a1d2fbcb70876a49_master.jpg"],
-    category: "Quần âu nam",
+    category: "Quần",
   },
   
   {
@@ -42,7 +51,7 @@ const products=[
     quantity: 30,
     sold: 100, 
     images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaqTdlX8TrKJOX_e7B0UuI3_5m24PwppxyC_noUgQ5U1GRjgb3txNvbbH-cQczxb03hME&usqp=CAU"],
-    category: "Giày thể thao nam",
+    category: "Giày",
   },
   
   {
@@ -54,7 +63,7 @@ const products=[
     quantity: 10,
     sold: 20,
     images: ["https://cdn.tgdd.vn/Products/Images/7264/209019/casio-mtp-1374d-1avdf-nam-ga-1-org.jpg"],
-    category: "Đồng hồ nam",
+    category: "Đồng hồ",
   },
   
   {  
@@ -67,7 +76,7 @@ const products=[
     quantity: 30,
     sold: 60,
     images:["https://azico.vn/uploads/images/vi-da-nam/__thumbs/vi-da-nam-D686(3).jpg/vi-da-nam-D686(3)__320x320.jpg"],
-    category: "Ví nam",
+    category: "Ví",
   },
   
   {
@@ -81,7 +90,7 @@ const products=[
     quantity: 20,
     sold: 50, 
     images: ["https://bizweb.dktcdn.net/100/415/697/products/m0w2iuvv-1-1hxj-hinh-mat-truoc-01-773b266a-c405-45d5-b508-87327f1f0062.jpg?v=1664011459027"],
-    category: "Áo khoác",  
+    category: "Áo",  
   },
   
   {
@@ -95,7 +104,7 @@ const products=[
     quantity: 50,
     sold: 150,
     images: ["https://product.hstatic.net/1000284478/product/90_586779_1_b94f5c343a2f47cda175af1303af6220_master.jpg"],
-    category: "Áo thun nữ",
+    category: "Áo thun",
   },  
   
   {
@@ -109,7 +118,7 @@ const products=[
     quantity: 100,
     sold: 250,
     images: ["https://filebroker-cdn.lazada.vn/kf/S7b724deee49140a2b487449b9996f9e5b.jpg"], 
-    category: "Chân váy nữ",
+    category: "Chân váy",
   },
   
   {
@@ -123,7 +132,7 @@ const products=[
     quantity: 150,
     sold: 500,
     images: ["https://img.websosanh.vn/v2/users/review/images/su60k9a6bza5o.jpg?compress=85"],
-    category: "Giày cao gót",
+    category: "Giày",
   },
   
   {
@@ -136,7 +145,7 @@ const products=[
     quantity: 10,
     sold: 15,
     images: ["https://www.charleskeith.vn/dw/image/v2/BCWJ_PRD/on/demandware.static/-/Sites-vn-products/default/dw94d09657/images/hi-res/2022-L6-CK2-70701231-3-09-1.jpg?sw=756&sh=1008"],
-    category: "Túi xách",
+    category: "Túi",
   },
   
   {
@@ -162,14 +171,61 @@ const products=[
     quantity: 50,
     sold: 100,
     images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBIVlWaupN_3Z8-EjcYHXhw0-uNyy34iuc_w&usqp=CAU"],
-    category: "Kính mát", 
+    category: "Kính", 
   },
 ] 
 
-// Cấu hình CORS
-app.use(cors({
-  origin: 'http://localhost:3000',
-}));
+// Giả định danh sách người dùng đã đăng ký
+const users = [
+  { username: 'user1', password: 'password1' },
+  { username: 'user2', password: 'password2' },
+];
+
+// Route đăng nhập
+app.post('/login', (req, res) => {
+  // Lấy thông tin đăng nhập từ yêu cầu
+  const { username, password } = req.body;
+  console.log(username, password)
+
+  // Tìm kiếm người dùng trong danh sách
+  const user = users.find((user) => user.username === username && user.password === password);
+
+  // Kiểm tra xem người dùng có tồn tại hay không
+  if (!user) {
+    return res.status(401).json({ error: 'Tên người dùng hoặc mật khẩu không chính xác.' });
+  }
+
+  // Trả về thành công nếu đăng nhập thành công
+  return res.status(200).json({ message: 'Đăng nhập thành công.' });
+  
+});
+// Tạo tài khoản người dùng
+app.post('/sign', (req, res) => {
+  // Lấy thông tin từ yêu cầu đăng ký
+  let { username, password } = req.body;
+  console.log(username, password)
+    // Kiểm tra nếu thiếu thông tin đăng ký
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Vui lòng cung cấp đầy đủ thông tin đăng ký.' });
+    }
+  
+    // Xử lý logic đăng ký tại đây (ví dụ: lưu thông tin người dùng vào cơ sở dữ liệu)
+  
+  // Kiểm tra xem người dùng đã tồn tại trong mảng users hay chưa
+  const existingUser = users.find(user => user.username === username);
+  if (existingUser) {
+    return res.status(400).json({ error: 'Tên người dùng đã tồn tại.' });
+  }
+
+  // Tạo một đối tượng mới đại diện cho người dùng đăng ký
+  const newUser = { username, password };
+
+  // Thêm người dùng mới vào mảng users
+  users.push(newUser);
+
+    // Trả về thành công nếu đăng ký thành công
+    return res.status(200).json({ message: 'Đăng nhập thành công.' });
+  });
 
 
 /// gửi nó về dùng respont 
