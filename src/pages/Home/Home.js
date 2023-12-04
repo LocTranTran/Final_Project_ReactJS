@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="d-flex justify-content-center align-items-center  flex-column ">
       <Banner />
-      <ProductList numItem={4} />
+      <ProductList numItem={5} />
       <CartCompact/>
       <Gird />
     </div>
