@@ -66,17 +66,59 @@ export function CartProvider({ children, numItem }) {
       setDisplayedItems(filteredItems.slice(0, numItem)); // Cập nhật danh sách sản phẩm hiển thị sau khi lọc và cắt số lượng sản phẩm
     },1000)
   };
-
-  // Trả về CartContext.Provider với giá trị context là displayedItems và handlePriceFilter
+    // Hàm xử lý việc lọc sản phẩm theo loại
+  const handleNameFilter = (event) => {
+    const selectType = event.target.value;
+    let filteredItems = [...products];
+  
+    if (selectType === "all") {
+      setFilterProduct([]); // Nếu chọn "Tất cả", không áp dụng bộ lọc
+    } else if (selectType === "Quần") {
+      filteredItems = filteredItems.filter((product) => product.category === "Quần"); // Lọc sản phẩm thuộc loại "quần"
+    } else if (selectType === "Áo") {
+      filteredItems = filteredItems.filter((product) => product.category === "Áo"); // Lọc sản phẩm thuộc loại "áo"
+    } else if (selectType === "Giày") {
+      filteredItems = filteredItems.filter((product) => product.category === "Giày"); // Lọc sản phẩm thuộc loại "phụ kiện"
+    } else if (selectType === "Ví") {
+      filteredItems = filteredItems.filter((product) => product.category === "Ví"); // Lọc sản phẩm thuộc loại "phụ kiện"
+    } else if (selectType === "Đồng hồ") {
+      filteredItems = filteredItems.filter((product) => product.category === "Đồng hồ"); // Lọc sản phẩm thuộc loại "phụ kiện"
+    } else if (selectType === "Túi") {
+      filteredItems = filteredItems.filter((product) => product.category === "Túi"); // Lọc sản phẩm thuộc loại "phụ kiện"
+    }
+  
+    setTimeout(() => {
+      setFilterProduct(filteredItems);
+      setDisplayedItems(filteredItems.slice(0, numItem)); // Cập nhật danh sách sản phẩm hiển thị sau khi lọc và cắt số lượng sản phẩm
+    }, 1000);
+  };
+  //Hàm sắp xếp sản phẩm 
+  const handleSort = (event) => {
+    const sortOption = event.target.value;
+    let sortedItems = [...filterProduct];
+  
+    if (sortOption === "asc") {
+      sortedItems.sort((a, b) => a.price - b.price); // Sắp xếp từ thấp đến cao
+    } else if (sortOption === "desc") {
+      sortedItems.sort((a, b) => b.price - a.price); // Sắp xếp từ cao đến thấp
+    }
+  
+    setTimeout(() => {
+      setFilterProduct(sortedItems);
+      setDisplayedItems(sortedItems.slice(0, numItem)); // Cập nhật danh sách sản phẩm hiển thị sau khi sắp xếp và cắt số lượng sản phẩm
+    }, 1000);
+  };  // Trả về CartContext.Provider với giá trị context là displayedItems và handlePriceFilter
   return (
     <CartContext.Provider
       value={{
         displayedItems,
-        handlePriceFilter,
         filterProduct,
+        isLoading,
         handleSearchInputChange,
         handleSearchButtonClick,
-        isLoading
+        handlePriceFilter,
+        handleNameFilter,
+        handleSort
       }}
     >
       {children}

@@ -8,12 +8,15 @@ const ProductList = ({numItem}) => {
   const { isLoading ,displayedItems } = useContext(CartContext);
    const displayedItemsSlice = displayedItems.slice(0, numItem);
   return (
-    <div className="d-flex align-items-center  flex-column  col-7 gap-5 ">
-      <h1 style={{ fontSize: "3rem" }}>Danh sách sản phẩm</h1>
+    <>
+      <h1 style={{ fontSize: "3rem" ,padding:'10px 0' }}>Danh sách sản phẩm</h1>
+    <div className="d-flex flex-column" style={{minHeight:'500px'}}>
       {displayedItemsSlice.length === 0 ? (
-        <img src='https://eherbalmarket.vn/assets/images/no-cart.png' alt='lỗi'></img>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '400px' }}>
+        <img style={{ width: '300px', height: '200px' ,marginBottom:'100px'}} src='https://eherbalmarket.vn/assets/images/no-cart.png' alt='lỗi' />
+      </div>
       ):(
-      <ul className="d-flex flex-wrap gap-5">
+      <ul className="d-flex flex-wrap gap-4">
         {displayedItemsSlice.map((product) => (
           <ProductsItems key={product.id} product={product} />
         ))}
@@ -120,6 +123,7 @@ const ProductList = ({numItem}) => {
         )}
       </span>
     </div>
+    </>
   );
 };
 

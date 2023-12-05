@@ -21,10 +21,10 @@ export default function Banner() {
               </button>
             </div>
             <figure className="banner__items-img-block">
-              <img src="./assets/image/img-main.png" alt="" />
+              <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2023/08/22/image001-11202385.jpg" alt="" />
             </figure>
           </section>
-          <section className="banner__items">
+          {/* <section className="banner__items">
             <div className="banner__items-info">
               <span className="banner__items-sub-title">
                 Welcome to shopery
@@ -65,7 +65,7 @@ export default function Banner() {
             <figure className="banner__items-img-block">
               <img src="./assets/image/img-main.png" alt="" />
             </figure>
-          </section>
+          </section> */}
           <div className="banner__dots-gr">
             <div className="banner__dots-items banner__dots-items--active"></div>
             <div className="banner__dots-items"></div>
