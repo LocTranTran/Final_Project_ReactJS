@@ -112,7 +112,7 @@ const products = [
     description:
       "Với form dáng Regular, áo sơmi mang đến sự thoải mái và linh hoạt cho người mặc",
     images: [
-      "https://product.hstatic.net/1000360022/product/id-002439a_cd390765e99d4d668fac784164ca17cc_grande.jpg",
+      "https://product.hstatic.net/1000360022/product/id-002439a_cd390765e99d4d668fac784164ca17cc_grande.jpg" ,
     ],
     category: "Áo",
   },
