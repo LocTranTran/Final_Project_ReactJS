@@ -1,20 +1,20 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
 
-import Header from "./components/products/Header/Header";
-import Footer from "./components/products/Footer/Footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 // import Products from "./pages/Products";
 import { CartProvider } from "./utils/CartContext";
+import { LoginProvider } from "./utils/LoginContext";
 import Router from "./utils/Router";
 
 const App = () => {
   return (
     <CartProvider>
-      <BrowserRouter>
+      <LoginProvider>
       <Header />
         <Router/>
       <Footer />
-      </BrowserRouter>
+      </LoginProvider>
     </CartProvider>
   );
 };

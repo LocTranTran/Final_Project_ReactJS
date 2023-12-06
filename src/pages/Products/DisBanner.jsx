@@ -9,15 +9,22 @@ const DisBanner = () => {
 
   useEffect(() => {
     // Tính toán tổng số giây từ số ngày, giờ, phút và giây ban đầu
-    let totalSecondsRemaining = days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60 + seconds;
+    let totalSecondsRemaining =
+      days * 24 * 60 * 60 + hours * 60 * 60 + minutes * 60 + seconds;
 
     // Giảm giá trị đếm ngược
     const interval = setInterval(() => {
       if (totalSecondsRemaining > 0) {
         totalSecondsRemaining--;
-        const remainingDays = Math.floor(totalSecondsRemaining / (24 * 60 * 60));
-        const remainingHours = Math.floor((totalSecondsRemaining % (24 * 60 * 60)) / (60 * 60));
-        const remainingMinutes = Math.floor((totalSecondsRemaining % (60 * 60)) / 60);
+        const remainingDays = Math.floor(
+          totalSecondsRemaining / (24 * 60 * 60)
+        );
+        const remainingHours = Math.floor(
+          (totalSecondsRemaining % (24 * 60 * 60)) / (60 * 60)
+        );
+        const remainingMinutes = Math.floor(
+          (totalSecondsRemaining % (60 * 60)) / 60
+        );
         const remainingSeconds = totalSecondsRemaining % 60;
 
         setDays(remainingDays);
@@ -29,7 +36,7 @@ const DisBanner = () => {
 
     // Xóa interval khi component bị unmount
     return () => clearInterval(interval);
-  }, []);
+  }, [days, hours, minutes, seconds]);
 
   const formatNumber = (number) => {
     return number.toString().padStart(2, '0');

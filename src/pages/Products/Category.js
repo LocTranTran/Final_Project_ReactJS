@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import './category.scss';
-// import Radio from './Radio';
 import { CartContext } from '../../utils/CartContext';
+// import Radio from './Radio';
 
 const Category = () => {
   const { handlePriceFilter, handleNameFilter,handleSort } = useContext(CartContext);
