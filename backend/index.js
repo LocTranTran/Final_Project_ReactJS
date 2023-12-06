@@ -55,7 +55,7 @@ const products = [
     id: 4,
     name: "Áo Polo Len Constrast Knit",
     price: 79000,
-    description: "Áo Polo Len Contrast Knit mang đến sự sang trọng và phá cách" ,
+    description: "Áo Polo Len Contrast Knit mang đến sự sang trọng và phá cách",
     images: [
       "https://product.hstatic.net/1000360022/product/id-002437a_df32655dcd9045c38673b37d0034a637_large.jpg",
     ],
