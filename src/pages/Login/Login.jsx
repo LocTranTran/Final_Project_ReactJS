@@ -117,7 +117,7 @@ const Login = () => {
         </div>
       </div>
       <Loading isLoading={isLoading} />
-      <Noti isLoading={isLoading} values={"Đăng Nhập Thành Công "} />
+      <Noti isLoading={isLoading} values={"Đăng Nhập Thành Công "}/>
     </div>
   );
 };
