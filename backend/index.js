@@ -173,7 +173,7 @@ const products=[
     category: "Kính", 
   },
 ] 
-
+//---------------------------------------------------------------------------------------
 // Giả định danh sách người dùng đã đăng ký
 const users = [
   { username: 'user1', password: 'password1' },
