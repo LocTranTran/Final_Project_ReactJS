@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate,Link } from "react-router-dom";
 import './Login.scss'
 import Loading from '../../utils/Loading';
+import Noti from '../../utils/Noti';
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -138,7 +139,8 @@ const Register = () => {
           </div>
         </div>
       </div>
-      <Loading isLoading={isLoading}/>
+      <Loading isLoading={isLoading} />
+      <Noti isLoading={isLoading} values={"Đăng Ký Thành Công "} />
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./Login.scss";
 import Loading from "../../utils/Loading";
+import Noti from "../../utils/Noti";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -115,7 +116,8 @@ const Login = () => {
           </div>
         </div>
       </div>
-    <Loading isLoading={isLoading}/>
+      <Loading isLoading={isLoading} />
+      <Noti isLoading={isLoading} values={"Đăng Nhập Thành Công "} />
     </div>
   );
 };

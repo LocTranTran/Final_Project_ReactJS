@@ -118,7 +118,7 @@ export function CartProvider({ children, numItem }) {
         handleSearchButtonClick,
         handlePriceFilter,
         handleNameFilter,
-        handleSort
+        handleSort,
       }}
     >
       {children}

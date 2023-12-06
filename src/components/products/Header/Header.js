@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../utils/CartContext";
 import "./Header.scss";
+import Noti from "../../../utils/Noti";
 const Header = () => {
   const { handleSearchInputChange, handleSearchButtonClick,isLoading } = useContext(CartContext);
   return (
@@ -100,7 +101,8 @@ const Header = () => {
               </div>
             </div>
           </div>
-     </header>
+      </header>
+      <Noti isLoading={isLoading} values={"Đang tìm kiếm"} />
     </>
   );
 };

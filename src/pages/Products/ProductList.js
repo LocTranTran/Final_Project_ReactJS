@@ -35,8 +35,8 @@ const ProductList = ({numItem}) => {
             ))}
           </ul>
         )}
-        <Loading isLoading={isLoading} />
       </div>
+        <Loading isLoading={isLoading} />
     </>
   );
 };

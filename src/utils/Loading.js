@@ -14,10 +14,11 @@ const Loading = ({isLoading}) => {
             height: "100%",
             backgroundColor:
               "rgba(0, 0, 0, 0.15)" /* Màu đen với độ mờ là 0.5 */,
-            zIndex: "0" /* Đảm bảo overlay hiển thị trên phần tử khác */,
+            zIndex: "999" /* Đảm bảo overlay hiển thị trên phần tử khác */,
           }}
           className="overlay"
-        ></div>
+        >
+        </div>
       ) : (
         // Văn bản "Search" khi không đang tải
         ""
