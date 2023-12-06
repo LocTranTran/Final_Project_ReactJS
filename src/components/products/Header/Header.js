@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../utils/CartContext";
 import "./Header.scss";
+import Noti from "../../../utils/Noti";
 const Header = () => {
   const { handleSearchInputChange, handleSearchButtonClick,isLoading } = useContext(CartContext);
   return (
@@ -28,9 +29,9 @@ const Header = () => {
                     </div>
                     <div className="header__top-right-separate"></div>
                     <div className="header__top-auth">
-                      <Link to="#" className="header__top-sign header__top-sign-in">Đăng Nhập</Link>
+                      <Link to="login" className="header__top-sign header__top-sign-in">Đăng Nhập</Link>
                       <div className="header__top-auth-separate">/</div>
-                      <Link to="#" className="header__top-sign header__top-sign-up">Đăng Ký</Link>
+                      <Link to="register " className="header__top-sign header__top-sign-up">Đăng Ký</Link>
                     </div>
                   </div>
                 </div>
@@ -48,7 +49,7 @@ const Header = () => {
                   <form className="header__midle-search-form">
                     <div className="header__midle-search-wrap">
                       <label htmlFor="header__search" className="header__midle-search-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i className="fa-solid fa-magnifying-glass"></i>
                       </label>
                       <input onChange={handleSearchInputChange} type='search' name="Tìm Kiếm sản phẩm" placeholder="Search" id="header__search" className="header__midle-search-input" />
                     </div>
@@ -100,7 +101,8 @@ const Header = () => {
               </div>
             </div>
           </div>
-     </header>
+      </header>
+      <Noti isLoading={isLoading} values={"Đang tìm kiếm"} />
     </>
   );
 };
