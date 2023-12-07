@@ -11,7 +11,7 @@ const Loading = ({isLoading}) => {
             top: "0",
             left: "0",
             width: "100%",
-            height: "100%",
+            height: "120%",
             backgroundColor:
               "rgba(0, 0, 0, 0.15)" /* Màu đen với độ mờ là 0.5 */,
             zIndex: "999" /* Đảm bảo overlay hiển thị trên phần tử khác */,

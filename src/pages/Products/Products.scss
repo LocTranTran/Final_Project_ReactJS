@@ -12,13 +12,13 @@
     display: flex;
     gap: 12px;
     overflow: hidden;
+    width: 1290px;
 }
 .products__items {
+    width: 248px;
+    height: 340px;
     display: flex;
     flex-direction: column;
-    flex: 0 0 calc(20% - 12px);
-    margin-bottom: 15px;
-    // padding: 10px;
     border-radius: 8px;
     border: 1px solid #E6E6E6;
     background-color: #fff;

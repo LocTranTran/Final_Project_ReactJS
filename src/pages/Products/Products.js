@@ -5,10 +5,10 @@ import './DisBanner'
 import DisBanner from "./DisBanner";
 const Products = () => {
   return (
-    <div className=" flex-column container-xxl d-flex justify-content-center gap-4 " >
-      <DisBanner/>
+    <div className=" flex-column container-xxl d-flex justify-content-center gap-4 ">
+      <DisBanner />
       <Category />
-      <ProductList/>
+      <ProductList />
     </div>
   );
 };

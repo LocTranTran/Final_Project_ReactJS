@@ -29,14 +29,14 @@ const ProductList = ({numItem}) => {
             />
           </div>
         ) : (
-          <ul className="products__list">
+          <ul className="products__list d-flex flex-wrap">
             {displayedItemsSlice.map((product) => (
               <ProductsItems key={product.id} product={product} />
             ))}
           </ul>
         )}
       </div>
-        <Loading isLoading={isLoading} />
+      <Loading isLoading={isLoading} />
     </>
   );
 };
