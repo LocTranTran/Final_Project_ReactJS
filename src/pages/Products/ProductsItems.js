@@ -1,7 +1,9 @@
-import React, { memo ,useState} from 'react'
+
+import React, { memo, useState } from "react";
 import './Products.scss'
-import '../../pages/Style.scss';
-import ProductInfo from './ProductInfo';
+import '../../pages/Style.scss'
+import ProductInfo from "./ProductInfo";
+
 const formatPrice = (amount) => {
   return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 };
@@ -18,12 +20,10 @@ const ProductsItems = ({ product }) => {
       <figure className="products__items-block">
         <img src={product.images} alt="" className="products__items--img" />
       </figure>
-      <div className="products__items-info">
-        <div className="products__items-info-left">
-          <h4 className="products__items-name">{product.name}</h4>
-          <span className="products__items-price">
-            {formatPrice(product.price)}
-          </span>
+        <div className="products__items-info">
+          <div className='products__items-info-left'>
+            <h4 className="products__items-name">{product.name}</h4>
+            <span className="products__items-price">{formatPrice(product.price)}</span>
         </div>
         <button className="product__cart-right-button">
           <svg
@@ -50,6 +50,6 @@ const ProductsItems = ({ product }) => {
       )}
     </div>
   );
-}
+};
 //. memo giúp tránh việc render lại thành phần khi các props không thay đổi.
 export default memo(ProductsItems)

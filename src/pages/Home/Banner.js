@@ -8,7 +8,7 @@ export default function Banner() {
           <section className="banner__items">
             <div className="banner__items-info">
               <span className="banner__info-sub-title">Welcome to shopery</span>
-              <h1 className="banner__items-title">
+              <h1 className="banner__items-title ">
                 Fresh & Healthy Organic Food
               </h1>
               <p className="banner__items-sale">Sale up to 30% OFF</p>

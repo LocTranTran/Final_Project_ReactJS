@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import ProductsItems from "./ProductsItems";
-import './Products.scss'
-import '../../pages/Style.scss'
+import "./Products.scss";
+import "../../pages/Style.scss";
 import { CartContext } from "../../utils/CartContext";
 import Loading from "../../utils/Loading";
-const ProductList = ({numItem}) => {
-  const { isLoading ,displayedItems } = useContext(CartContext);
-   const displayedItemsSlice = displayedItems.slice(0, numItem);
+
+const ProductList = ({ numItem }) => {
+  const { isLoading, displayedItems } = useContext(CartContext);
+  const displayedItemsSlice = displayedItems.slice(0, numItem);
+
   return (
     <>
       <h1 style={{ fontSize: "3rem", padding: "10px 0" }}>

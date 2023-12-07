@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 import { CartContext } from "../../utils/CartContext";
 import { LoginContext } from "../../utils/LoginContext";
+import { SidebarContext } from "../../utils/SidebarContext";
+import CartCompact from "../../pages/Cart/CartCompact";
 const Header = () => {
   const { handleSearchInputChange, handleSearchButtonClick, isLoading } =
     useContext(CartContext);
@@ -13,8 +15,8 @@ const Header = () => {
     handleUserClick,
     showLogout,
   } = useContext(LoginContext);
-   
-  
+  const { handleOpen, isOpen } = useContext(SidebarContext);
+
   return (
     <>
       <header className="header">
@@ -47,7 +49,7 @@ const Header = () => {
                       style={{ fontSize: "1.5rem", fontFamily: "cursive" }}
                       onClick={handleUserClick}
                     >
-                      <b>{username}</b> 
+                      <b>{username}</b>
                       <i className="fa-solid fa-caret-down "></i>
                     </Link>
                     {showLogout && (
@@ -60,7 +62,7 @@ const Header = () => {
                           top: "65px",
                           fontSize: "1.3rem",
                           boxShadow: "1px 1px 2px gray",
-                          height: '40px'
+                          height: "40px",
                         }}
                       >
                         Đăng xuất
@@ -127,15 +129,10 @@ const Header = () => {
                   </button>
                 </form>
               </div>
-              <div className="header__midle-cart">
-                <figure className="header__midle-cart-icon">
-                  <img src="./assets/image/cart.svg" alt="" />
-                  <span className="header__middle-cart-count">0</span>
-                </figure>
-                <div className="header__midle-cart-info">
-                  <span className="header__midle-cart-title">Giỏ Hàng:</span>
-                  <span className="header__midle-cart-price">$57.00</span>
-                </div>
+              {/* giỏ hàng */}
+              <div>
+                <div onClick={handleOpen}>Gio hàng</div>
+                {isOpen && <CartCompact />}
               </div>
             </div>
           </div>
