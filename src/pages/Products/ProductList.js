@@ -20,7 +20,7 @@ const ProductList = ({numItem}) => {
       </ul>
 
       )}
-      <>
+      <div>
         {isLoading ? (
           // Biểu tượng SVG trong khi đợi
           <div
@@ -46,7 +46,7 @@ const ProductList = ({numItem}) => {
         )}
       </div>
         <Loading isLoading={isLoading} />
-    </>
+    </div>
   );
 };
 
