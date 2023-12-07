@@ -4,6 +4,7 @@ import "./Header.scss";
 import { CartContext } from "../../utils/CartContext";
 import { LoginContext } from "../../utils/LoginContext";
 import { SidebarContext } from "../../utils/SidebarContext";
+import CartCompact from "../../pages/Cart/CartCompact";
 const Header = () => {
   const { handleSearchInputChange, handleSearchButtonClick, isLoading } =
     useContext(CartContext);
@@ -14,8 +15,8 @@ const Header = () => {
     handleUserClick,
     showLogout,
   } = useContext(LoginContext);
-   const {isOpen,setIsOpen} = useContext(SidebarContext);
-  
+  const { handleOpen, isOpen } = useContext(SidebarContext);
+
   return (
     <>
       <header className="header">
@@ -48,7 +49,7 @@ const Header = () => {
                       style={{ fontSize: "1.5rem", fontFamily: "cursive" }}
                       onClick={handleUserClick}
                     >
-                      <b>{username}</b> 
+                      <b>{username}</b>
                       <i className="fa-solid fa-caret-down "></i>
                     </Link>
                     {showLogout && (
@@ -61,7 +62,7 @@ const Header = () => {
                           top: "65px",
                           fontSize: "1.3rem",
                           boxShadow: "1px 1px 2px gray",
-                          height: '40px'
+                          height: "40px",
                         }}
                       >
                         Đăng xuất
@@ -130,8 +131,8 @@ const Header = () => {
               </div>
               {/* giỏ hàng */}
               <div>
-                <div>Header</div>
-                <div onClick={()=>setIsOpen(!isOpen)}>open/close sidebar </div>
+                <div onClick={handleOpen}>Gio hàng</div>
+                {isOpen && <CartCompact />}
               </div>
             </div>
           </div>

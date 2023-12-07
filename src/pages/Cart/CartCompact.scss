@@ -3,11 +3,12 @@
 .cart {
     position: fixed;
     top: 10px;
-    right: -350px;
-    width: 320px;
+    right: 5px;
+    width: 520px;
+    height: 95%;
     padding: 20px;
     transition: 0.3s right ease-out;
-    
+    background-color: aliceblue;
     // Styling
     
     &.show {
@@ -30,3 +31,36 @@
       padding: 10px 15px;
     } 
   }
+  /* CartCompact.scss */
+
+.cart {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.cart h3 {
+  text-align: center;
+  margin-bottom: 20px; 
+}
+
+.cart__items {
+  /* CSS items */
+}
+
+.cart__total {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.cart__total p {
+  font-weight: bold;
+}
+
+.cart__checkout-btn {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
