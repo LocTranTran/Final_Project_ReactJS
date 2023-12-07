@@ -10,6 +10,7 @@ const ProductList = ({ numItem }) => {
   const displayedItemsSlice = displayedItems.slice(0, numItem);
 
   return (
+<<<<<<< HEAD
     <div className="">
       <h1 style={{ fontSize: "3rem" }}>Danh sách sản phẩm</h1>
       {displayedItemsSlice.length === 0 ? (
@@ -62,6 +63,38 @@ const ProductList = ({ numItem }) => {
           </div>
       )}
     </div>
+=======
+    <>
+      <h1 style={{ fontSize: "3rem", padding: "10px 0" }}>
+        Danh sách sản phẩm
+      </h1>
+      <div className="container">
+        {displayedItemsSlice.length === 0 ? (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "400px",
+            }}
+          >
+            <img
+              style={{ width: "300px", height: "200px", marginBottom: "100px" }}
+              src="https://eherbalmarket.vn/assets/images/no-cart.png"
+              alt="lỗi"
+            />
+          </div>
+        ) : (
+          <ul className="products__list">
+            {displayedItemsSlice.map((product) => (
+              <ProductsItems key={product.id} product={product} />
+            ))}
+          </ul>
+        )}
+      </div>
+        <Loading isLoading={isLoading} />
+    </>
+>>>>>>> 7497d6df77af5b52dd28ac65ac68d66072d989fb
   );
 };
 

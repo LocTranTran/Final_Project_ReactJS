@@ -134,7 +134,7 @@ const products = [
 
   {
     id: 10,
-    name: "Giày thể thao nam Biti's",
+    name: "Giày thể thao Biti's chất lượng cao, độ bền cực tốt",
     brand: "Biti's",
     price: 620000,
     colors: ["Trắng", "Đen"],
