@@ -55,7 +55,7 @@ const products = [
     id: 4,
     name: "Áo Polo Len Constrast Knit",
     price: 79000,
-    description: "Áo Polo Len Contrast Knit mang đến sự sang trọng và phá cách" ,
+    description: "Áo Polo Len Contrast Knit mang đến sự sang trọng và phá cách",
     images: [
       "https://product.hstatic.net/1000360022/product/id-002437a_df32655dcd9045c38673b37d0034a637_large.jpg",
     ],
@@ -112,7 +112,7 @@ const products = [
     description:
       "Với form dáng Regular, áo sơmi mang đến sự thoải mái và linh hoạt cho người mặc",
     images: [
-      "https://product.hstatic.net/1000360022/product/id-002439a_cd390765e99d4d668fac784164ca17cc_grande.jpg",
+      "https://product.hstatic.net/1000360022/product/id-002439a_cd390765e99d4d668fac784164ca17cc_grande.jpg" ,
     ],
     category: "Áo",
   },
@@ -134,7 +134,7 @@ const products = [
 
   {
     id: 10,
-    name: "Giày thể thao nam Biti's",
+    name: "Giày thể thao Biti's chất lượng cao, độ bền cực tốt",
     brand: "Biti's",
     price: 620000,
     colors: ["Trắng", "Đen"],

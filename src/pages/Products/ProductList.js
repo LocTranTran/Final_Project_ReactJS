@@ -12,7 +12,7 @@ const ProductList = ({numItem}) => {
       <h1 style={{ fontSize: "3rem", padding: "10px 0" }}>
         Danh sách sản phẩm
       </h1>
-      <div className="d-flex flex-column" style={{ minHeight: "500px" }}>
+      <div className="container">
         {displayedItemsSlice.length === 0 ? (
           <div
             style={{
@@ -29,7 +29,7 @@ const ProductList = ({numItem}) => {
             />
           </div>
         ) : (
-          <ul className="d-flex flex-wrap gap-4">
+          <ul className="products__list">
             {displayedItemsSlice.map((product) => (
               <ProductsItems key={product.id} product={product} />
             ))}
