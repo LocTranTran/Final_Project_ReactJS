@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 import { CartContext } from "../../utils/CartContext";
 import { LoginContext } from "../../utils/LoginContext";
+import { SidebarContext } from "../../utils/SidebarContext";
 const Header = () => {
   const { handleSearchInputChange, handleSearchButtonClick, isLoading } =
     useContext(CartContext);
@@ -13,7 +14,7 @@ const Header = () => {
     handleUserClick,
     showLogout,
   } = useContext(LoginContext);
-   
+   const {isOpen,setIsOpen} = useContext(SidebarContext);
   
   return (
     <>
@@ -127,15 +128,10 @@ const Header = () => {
                   </button>
                 </form>
               </div>
-              <div className="header__midle-cart">
-                <figure className="header__midle-cart-icon">
-                  <img src="./assets/image/cart.svg" alt="" />
-                  <span className="header__middle-cart-count">0</span>
-                </figure>
-                <div className="header__midle-cart-info">
-                  <span className="header__midle-cart-title">Giỏ Hàng:</span>
-                  <span className="header__midle-cart-price">$57.00</span>
-                </div>
+              {/* giỏ hàng */}
+              <div>
+                <div>Header</div>
+                <div onClick={()=>setIsOpen(!isOpen)}>open/close sidebar </div>
               </div>
             </div>
           </div>

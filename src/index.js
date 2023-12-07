@@ -5,13 +5,18 @@ import "react-toastify/dist/ReactToastify.css";
 import App from './App';
 import './pages/Style.scss';
 import './index.scss';
+import SidebarProvider from './utils/SidebarContext';
+
 import { BrowserRouter as Router } from "react-router-dom";
 const root = createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <SidebarProvider>
+    <React.StrictMode>
     <Router>
       <App />
     </Router>
     <ToastContainer />
   </React.StrictMode>
+  </SidebarProvider>
+  
 );
