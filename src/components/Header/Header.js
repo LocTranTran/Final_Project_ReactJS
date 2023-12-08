@@ -16,7 +16,7 @@ const Header = () => {
     showLogout,
   } = useContext(LoginContext);
   const { handleOpen, isOpen } = useContext(SidebarContext);
-
+  console.log(isOpen)
   return (
     <>
       <header className="header">
