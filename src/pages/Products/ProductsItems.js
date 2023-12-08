@@ -1,13 +1,11 @@
 
-import React, { memo, useState } from "react";
+import React, { memo, useState, useContext } from "react";
 import './Products.scss'
 import '../../pages/Style.scss'
 import ProductInfo from "./ProductInfo";
-
-const formatPrice = (amount) => {
-  return amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
-};
+import { CartContext } from "../../utils/CartContext";
 const ProductsItems = ({ product }) => {
+  const { addToCart, formatPrice } = useContext(CartContext);
   const [showProductInfo, setShowProductInfo] = useState(false);
   const handleProductClick = () => {
     setShowProductInfo(true);
@@ -15,17 +13,30 @@ const ProductsItems = ({ product }) => {
   const handleCloseClick = () => {
     setShowProductInfo(false);
   }
+   const handleAddToCartClick = () => {
+     addToCart(product);
+     console.log("add");
+   };
   return (
-    <div key={product.id} onClick={handleProductClick} className="products__items">
+    <div
+      key={product.id}
+      onClick={handleProductClick}
+      className="products__items"
+    >
       <figure className="products__items-block">
         <img src={product.images} alt="" className="products__items--img" />
       </figure>
-        <div className="products__items-info">
-          <div className='products__items-info-left'>
-            <h4 className="products__items-name">{product.name}</h4>
-            <span className="products__items-price">{formatPrice(product.price)}</span>
+      <div className="products__items-info">
+        <div className="products__items-info-left">
+          <h4 className="products__items-name">{product.name}</h4>
+          <span className="products__items-price">
+            {formatPrice(product.price)}
+          </span>
         </div>
-        <button className="product__cart-right-button">
+        <button
+          onClick={handleAddToCartClick}
+          className="product__cart-right-button"
+        >
           <svg
             width="20"
             height="20"
@@ -46,7 +57,11 @@ const ProductsItems = ({ product }) => {
         </button>
       </div>
       {showProductInfo && (
-        <ProductInfo formatPrice={formatPrice} product={product} handleCloseClick={handleCloseClick} />
+        <ProductInfo
+          formatPrice={formatPrice}
+          product={product}
+          handleCloseClick={handleCloseClick}
+        />
       )}
     </div>
   );

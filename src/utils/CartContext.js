@@ -11,8 +11,19 @@ export function CartProvider({ children, numItem }) {
   const [products, setProducts] = useState([]); // Danh sách sản phẩm
   const [displayedItems, setDisplayedItems] = useState([]); // Danh sách sản phẩm hiển thị
   const [filterProduct, setFilterProduct] = useState([]); // Danh sách sản phẩm sau khi lọc
-  const [searchItem, setSearchItem] = useState(''); // Tìm Kiếm sản phẩm 
+  const [searchItem, setSearchItem] = useState(''); // Tìm Kiếm sản phẩm
+ const [cartItems, setCartItems] = useState([]);
 
+  const formatPrice = (amount) => {
+    return amount.toLocaleString("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    });
+  };
+ const addToCart = (product) => {
+   setCartItems([...cartItems, product]);
+ };
+  //Thêm vào giỏ hàng 
   // Sử dụng useEffect để lấy dữ liệu từ API khi component được render
   useEffect(() => {
     const fetchData = async () => {
@@ -107,10 +118,14 @@ export function CartProvider({ children, numItem }) {
       setFilterProduct(sortedItems);
       setDisplayedItems(sortedItems.slice(0, numItem)); // Cập nhật danh sách sản phẩm hiển thị sau khi sắp xếp và cắt số lượng sản phẩm
     }, 1000);
+    
   };  // Trả về CartContext.Provider với giá trị context là displayedItems và handlePriceFilter
   return (
     <CartContext.Provider
       value={{
+        formatPrice,
+        cartItems,
+        addToCart,
         displayedItems,
         filterProduct,
         isLoading,

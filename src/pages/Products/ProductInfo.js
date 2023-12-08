@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import './ProductInfo.scss';
-
-const ProductInfo = ({ product, formatPrice }) => {
-      const [showProductInfo, setShowProductInfo] = useState(true);
+import { CartContext } from "../../utils/CartContext";
+const ProductInfo = ({ product}) => {
+    const [showProductInfo, setShowProductInfo] = useState(true);
+    const { formatPrice } = useContext(CartContext);
       const handleCloseClick = () => {
         setShowProductInfo(false);
       };

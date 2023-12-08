@@ -10,6 +10,7 @@
     transition: 0.3s right ease-out;
     background-color: aliceblue;
     // Styling
+    z-index: 10;
     
     &.show {
       right: 10px;
