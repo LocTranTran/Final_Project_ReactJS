@@ -15,7 +15,6 @@ export function CartProvider({ children, numItem }) {
   const [cartItems, setCartItems] = useState([]);
   const [quantity, setQuantity] = useState(1);
  const [subTotal, setSubTotal] = useState(0);
-
   const formatPrice = (amount) => {
     return amount.toLocaleString("vi-VN", {
       style: "currency",
@@ -77,6 +76,8 @@ export function CartProvider({ children, numItem }) {
     );
     setSubTotal(newSubTotal);
   }, [cartItems]);
+
+=======
 
   // Sử dụng useEffect để lấy dữ liệu từ API khi component được render
   useEffect(() => {
@@ -203,6 +204,7 @@ export function CartProvider({ children, numItem }) {
         displayedItems,
         filterProduct,
         isLoading,
+        removeFromCart, 
         handleSearchInputChange,
         handleSearchButtonClick,
         handlePriceFilter,

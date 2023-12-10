@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import './CartCompact.scss';
 import { SidebarContext } from '../../utils/SidebarContext';
@@ -60,4 +61,4 @@ const CartCompact = () => {
   );
 }
 
-export default CartCompact
+  export default CartCompact

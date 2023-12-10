@@ -2,6 +2,7 @@ import React, { memo } from "react";
 import Gird from "./Gird";
 import Banner from "./Banner";
 import ProductList from "../Products/ProductList";
+import CartCompact from "../Cart/CartCompact";
 import './Home.scss';
 import BannerInfo from "../../components/BannerInfo";
 import DisBanner from "../Products/DisBanner";
