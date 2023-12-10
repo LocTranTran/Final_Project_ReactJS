@@ -15,6 +15,11 @@ export function CartProvider({ children, numItem }) {
   const [cartItems, setCartItems] = useState([]);
   const [quantity, setQuantity] = useState(1);
  const [subTotal, setSubTotal] = useState(0);
+ //xóa sản phẩm trong giỏ hàng
+ const removeFromCart = (itemId) => {
+  const updatedCartItems = cartItems.filter(item => item.id !== itemId);
+  setCartItems(updatedCartItems);
+};
   const formatPrice = (amount) => {
     return amount.toLocaleString("vi-VN", {
       style: "currency",
@@ -197,6 +202,7 @@ export function CartProvider({ children, numItem }) {
         handleRemoveItem,
         cartItems,
         setCartItems,
+        removeFromCart, 
         formatPrice,
         addToCart,
         displayedItems,
