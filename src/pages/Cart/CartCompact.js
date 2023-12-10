@@ -1,60 +1,101 @@
-import React, { useContext } from "react";
-import './CartCompact.scss';
-import { SidebarContext } from '../../utils/SidebarContext';
-import { CartContext } from "../../utils/CartContext";
-const CartCompact = () => {
-  const { handleClose } = useContext(SidebarContext);
-  const { cartItems, formatPrice } = useContext(CartContext);
-  return (
-    <div
-      style={{
-        position: "absolute",
-        top: "0",
-        left: "0",
-        width: "100%",
-        height: "300%",
-        backgroundColor: "rgba(0, 0, 0, 0.35)" /* Màu đen với độ mờ là 0.5 */,
-        zIndex: "10" /* Đảm bảo overlay hiển thị trên phần tử khác */,
-      }}
-      className="overlay"
-    >
-      <div className="cart">
-        <button onClick={handleClose}>Đóng</button>
-        <h3>Giỏ hàng</h3>
-        {cartItems.length === 0 ? (
-          <p>Giỏ hàng trống</p>
-        ) : (
-          <ul>
-            {cartItems.map((item) => (
-              <li key={item.id}>
-                <img src={item.images} alt="" />
-                <div style={{ width: "200px" }}>
-                  <h2>{item.name}</h2>
-                  <i>{item.description}</i>
-                </div>
-                <h1>
-                  <i>{item.price} vnđ</i>
-                </h1>
-                <button className="cart-remove">
-                  <i
-                    className="fa-solid fa-trash fa-2xl"
-                    style={{ color: "#f7f7f7" }}
-                  ></i>
-                </button>{" "}
-              </li>
-            ))}
-          </ul>
-        )}
-        <div className="cart__items">{/* Hiển thị các items */}</div>
-        <div className="cart__total">
-          <p>Tổng tiền: </p>
-          <p>$99</p>
+  import React, { useContext, useState } from "react";
+  import './CartCompact.scss';
+  import { SidebarContext } from '../../utils/SidebarContext';
+  import { CartContext } from "../../utils/CartContext";
+// import { cssTransition } from "react-toastify";
+  const CartCompact = () => {
+    const { handleClose } = useContext(SidebarContext);
+    const { cartItems, formatPrice, setCartItems, removeFromCart } = useContext(CartContext);
+    const { handleOpen, isOpen } = useContext(SidebarContext);
+    // const [cartTransform, setCartTransform] = useState('translateX(0%)');
+    const [quantity, setQuantity] = useState(1); // Khởi tạo state cho số lượng sản phẩm, ở đây mặc định là 1
+      // Hàm xử lý khi người dùng nhấn nút tăng số lượng
+    const increaseQuantity = (itemId) => {
+        const updatedCartItems = cartItems.map((item) =>
+          item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+      );
+        setCartItems(updatedCartItems);
+    };
+      // Tăng số lượng hàng
+    const reduceQuantity = (itemId) => {
+        const updatedCartItems = cartItems.map((item) =>
+          item.id === itemId && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+      );
+        setCartItems(updatedCartItems);
+    };
+    // Xóa sản phẩm
+    const handleRemove = (itemId) => {
+      removeFromCart(itemId);
+    };
+    // Tổng tiền
+    const totalCartPrice = cartItems.reduce((total, item) => {
+      return total + item.price * item.quantity;
+    }, 0);
+      // const totalPrice = quantity * item.price;
+      // const openCart = () => {
+      //   setCartTransform('translateX(0%)');
+      // };
+      console.log(isOpen);
+    return (
+      <>
+        <div onClick={handleClose} className="cart__modal"></div>
+        <div className='cart' style={{ 
+      transform: `translateX(${isOpen ? '0%' : '100%'})`,
+      transition: 'transform 0.5s ease-in-out'}}>
+          <div className="cart__header">
+            {/* <button onClick={handleClose} className="cart__close">Đóng</button> */}
+            <h3 className="cart__title">Shopping Card</h3>
+          </div>
+          {cartItems.length === 0 ? (
+            <div className="cart__not-product">
+              <img src="./assets/image/no-product.png" alt=""  className="cart__not-product-img"/>
+              <p className="cart__not-product-sub">Giỏ hàng của bạn còn trống</p>
+            </div>
+            
+          ) : (
+            <ul className="cart__list">
+              {cartItems.map((item) => (
+                <li key={item.id} className="cart__items">
+                  <figure className="cart__items-img-block">
+                    <img src={item.images} alt="" className="cart__items-img"/>
+                  </figure>
+                  <div className="cart__items-body">
+                    <h2 className="cart__items-title">{item.name}</h2>
+                    {/* <i>{item.description}</i> */}
+                    <form action="" className="cart__quanity">
+                      <span className="cart__quanity-plus" onClick={() => increaseQuantity(item.id)}>+</span>
+                      <span className="cart__quanity-count">{item.quantity}</span>
+                      <span className="cart__quanity-minus" onClick={() => reduceQuantity(item.id)}>-</span>
+                    </form>
+                    
+                  </div>
+                  <div className="cart__items-footer">
+                    <span className="cart__items-remove" onClick={() => handleRemove(item.id)}>Remove</span>
+                    <span className="cart__items-price">
+                    {formatPrice(item.price * item.quantity)}
+                    </span>
+                  </div>
+                  {/* <button className="cart-remove">
+                    <i
+                      className="fa-solid fa-trash fa-2xl"
+                      style={{ color: "#f7f7f7" }}
+                    ></i>
+                  </button>{" "} */}
+                </li>
+              ))}
+            </ul>
+          )}
+          {/* <div className="cart__items">Hiển thị các items</div> */}
+          <div className="cart__footer">
+            <div className="cart__total">
+              <p>Tổng tiền: </p>
+              <p>{formatPrice(totalCartPrice)}</p>
+            </div>
+            <button className="cart__checkout-btn">Thanh toán</button>
+          </div>
         </div>
-        <button className="cart__checkout-btn">Thanh toán</button>
-        tới giỏ hàng
-      </div>
-    </div>
-  );
-}
+      </>
+    );
+  }
 
-export default CartCompact
+  export default CartCompact

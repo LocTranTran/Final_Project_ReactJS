@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import { CartContext } from "../../utils/CartContext";
@@ -16,7 +16,8 @@ const Header = () => {
     showLogout,
   } = useContext(LoginContext);
   const { handleOpen, isOpen } = useContext(SidebarContext);
-  console.log(isOpen)
+    console.log(isOpen)
+    // const [cartTransform, setCartTransform] = useState('translateX(0%)');
   return (
     <>
       <header className="header">

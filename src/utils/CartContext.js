@@ -12,7 +12,12 @@ export function CartProvider({ children, numItem }) {
   const [displayedItems, setDisplayedItems] = useState([]); // Danh sách sản phẩm hiển thị
   const [filterProduct, setFilterProduct] = useState([]); // Danh sách sản phẩm sau khi lọc
   const [searchItem, setSearchItem] = useState(''); // Tìm Kiếm sản phẩm
- const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const removeFromCart = (itemId) => {
+    const updatedCartItems = cartItems.filter(item => item.id !== itemId);
+    setCartItems(updatedCartItems);
+  };
+//  const [cartItems, removeFromCart] = useState([]);
 
   const formatPrice = (amount) => {
     return amount.toLocaleString("vi-VN", {
@@ -20,9 +25,25 @@ export function CartProvider({ children, numItem }) {
       currency: "VND",
     });
   };
- const addToCart = (product) => {
-   setCartItems([...cartItems, product]);
- };
+//  const addToCart = (product) => {
+//    setCartItems([...cartItems, product]);
+//  };
+const addToCart = (product) => {
+  // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
+  const isProductInCart = cartItems.find(item => item.id === product.id);
+
+  if (isProductInCart) {
+    // Nếu sản phẩm đã có trong giỏ hàng, cập nhật số lượng của sản phẩm này
+    const updatedCartItems = cartItems.map(item =>
+      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    setCartItems(updatedCartItems);
+  } else {
+    // Nếu sản phẩm chưa có trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng với số lượng là 1
+    setCartItems([...cartItems, { ...product, quantity: 1 }]);
+  }
+};
+
   //Thêm vào giỏ hàng 
   // Sử dụng useEffect để lấy dữ liệu từ API khi component được render
   useEffect(() => {
@@ -125,10 +146,12 @@ export function CartProvider({ children, numItem }) {
       value={{
         formatPrice,
         cartItems,
+        setCartItems,
         addToCart,
         displayedItems,
         filterProduct,
         isLoading,
+        removeFromCart, 
         handleSearchInputChange,
         handleSearchButtonClick,
         handlePriceFilter,
