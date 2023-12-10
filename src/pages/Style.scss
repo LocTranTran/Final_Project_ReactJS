@@ -6,6 +6,7 @@ $color-title: #0000;
 $warning-color: #FF8A00;
 $color-items: #4D4D4D;
 $line-clamp: 2;
+$line-clamp-cart: 1;
 *,
 ::before,
 ::after {
@@ -32,6 +33,12 @@ body {
 @mixin limited-text {
     display: -webkit-box;
     -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+@mixin limited-text-cart {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp-cart;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
