@@ -1,0 +1,137 @@
+.container-xxl {
+  // display: flex;
+  // justify-content: space-around;
+
+  .shopping-cart {
+    min-height: 500px;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .shopping-cart-title {
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 870px;
+
+      @media (min-width: 872px) {
+        width: 872px;
+      }
+    }
+
+    .shopping-cart-items {
+      .shopping-cart-items-item {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 870px;
+        justify-content: space-between;
+
+        .shopping-cart-items-img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+        h1 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .quantity {
+    padding: 5px;
+    width: 100px;
+    height: 37px;
+    border-radius: 20px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 40px;
+
+    &-btn {
+      font-size: 1.5rem;
+
+      &:nth-child(1) {
+        background-color: aliceblue;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 30px;
+      }
+      &:nth-child(3) {
+        background-color: aliceblue;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 30px;
+      }
+    }
+  }
+} 
+          .cart-remove:hover {
+            transform: scale(1.1);
+            color:red;
+          }
+        
+                 
+.shopping-total {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 350px;
+  height: 250px;
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+
+  h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+
+  hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #eaeaea;
+  }
+
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #666;
+
+    span:first-child {
+      font-weight: bold;
+    }
+  }
+
+  .order-button {
+    background-color: #ff6f00;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #ff8f00;
+    }
+  }
+}

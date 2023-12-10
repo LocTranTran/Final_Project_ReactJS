@@ -45,28 +45,46 @@ const Header = () => {
                 {loggedIn ? (
                   <div className="header__top-auth">
                     <Link
-                      className="header__top-sign header__top-sign-in d-flex align-items-center gap-3"
-                      style={{ fontSize: "1.5rem", fontFamily: "cursive" }}
+                      className="header__top-sign justify-content-between header__top-sign-in d-flex align-items-center "
+                      style={{
+                        fontSize: "1.5rem",
+                        fontFamily: "cursive",
+                        width: "50px",
+                      }}
                       onClick={handleUserClick}
                     >
                       <b>{username}</b>
                       <i className="fa-solid fa-caret-down "></i>
                     </Link>
                     {showLogout && (
-                      <Link
-                        to="login"
-                        className="header__top-logout d-flex align-items-center "
+                      <div
+                        className="d-flex flex-column justify-content-center"
                         onClick={handleLogout}
                         style={{
                           position: "absolute",
-                          top: "65px",
+                          top: "70px",
                           fontSize: "1.3rem",
-                          boxShadow: "1px 1px 2px gray",
-                          height: "40px",
+                          boxShadow: "0px 0px 2px gray",
+                          height: "50px",
+                          color: "black",
+                          backgroundColor: "white",
+                          padding: "5px",
                         }}
                       >
-                        Đăng xuất
-                      </Link>
+                        <Link
+                          to=""
+                          className="header__top-logout d-flex align-items-center "
+                        >
+                          Hồ sơ
+                        </Link>
+                        <Link
+                          to="login"
+                          className="header__top-logout d-flex align-items-center "
+                          onClick={handleLogout}
+                        >
+                          Đăng xuất
+                        </Link>
+                      </div>
                     )}
                   </div>
                 ) : (
@@ -131,7 +149,9 @@ const Header = () => {
               </div>
               {/* giỏ hàng */}
               <div>
-                <div onClick={handleOpen}>Gio hàng</div>
+                <div onClick={handleOpen}>
+                  <i style={{color:'green',fontSize:'3rem'}} className="fa-solid fa-basket-shopping"></i>
+                </div>
                 {isOpen && <CartCompact />}
               </div>
             </div>

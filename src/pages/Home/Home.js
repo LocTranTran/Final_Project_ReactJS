@@ -3,11 +3,15 @@ import Gird from "./Gird";
 import Banner from "./Banner";
 import ProductList from "../Products/ProductList";
 import './Home.scss';
+import BannerInfo from "../../components/BannerInfo";
+import DisBanner from "../Products/DisBanner";
 const Home = () => {
   return (
     <div className="d-flex justify-content-center align-items-center  flex-column ">
+      <BannerInfo/>
       <Banner />
       <ProductList numItem={5} />
+      <DisBanner/>
       <Gird />
     </div>
     

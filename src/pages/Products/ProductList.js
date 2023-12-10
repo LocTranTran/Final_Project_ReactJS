@@ -14,7 +14,7 @@ const ProductList = ({ numItem }) => {
       <h1 style={{ fontSize: "3rem", padding: "10px 0" }}>
         Danh sách sản phẩm
       </h1>
-      <div className="container">
+      <div className="container-xl ">
         {displayedItemsSlice.length === 0 ? (
           <div
             style={{

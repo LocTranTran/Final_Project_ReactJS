@@ -7,21 +7,24 @@ export default function Banner() {
         <div className="banner__list">
           <section className="banner__items">
             <div className="banner__items-info">
-              <span className="banner__info-sub-title">Welcome to shopery</span>
+              <span className="banner__info-sub-title">
+                Chào mừng bạn đến với Shopery
+              </span>
               <h1 className="banner__items-title ">
-                Fresh & Healthy Organic Food
+                Thời trang và phụ kiện thời thượng
               </h1>
-              <p className="banner__items-sale">Sale up to 30% OFF</p>
+              <p className="banner__items-sale">Giảm giá lên đến 30%</p>
               <p className="banner__items-sub-sale">
-                Free shipping on all your order. we deliver, you enjoy
+                Miễn phí vận chuyển cho tất cả đơn hàng. Chúng tôi giao hàng,
+                bạn thả ga mua sắm
               </p>
               <button className="banner__items-button">
-                Shop now
+                Khám phá ngay
                 <img src="./assets/image/arrow.svg" alt="" />
               </button>
             </div>
             <figure className="banner__items-img-block">
-              <img src="https://cdn-i.vtcnews.vn/resize/th/upload/2023/08/22/image001-11202385.jpg" alt="" />
+              {/* <img src="../../assets/image/bannens.png" alt="" /> */}
             </figure>
           </section>
           {/* <section className="banner__items">

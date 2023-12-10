@@ -18,12 +18,8 @@ const ProductsItems = ({ product }) => {
      console.log("add");
    };
   return (
-    <div
-      key={product.id}
-      onClick={handleProductClick}
-      className="products__items"
-    >
-      <figure className="products__items-block">
+    <div key={product.id} className="products__items">
+      <figure className="products__items-block" onClick={handleProductClick}>
         <img src={product.images} alt="" className="products__items--img" />
       </figure>
       <div className="products__items-info">

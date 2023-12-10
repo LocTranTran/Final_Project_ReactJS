@@ -11,6 +11,7 @@ const ProductInfo = ({ product}) => {
       <>
         {showProductInfo && (
           <div
+            onClick={handleCloseClick}
             style={{
               position: "absolute",
               top: "0",
@@ -24,13 +25,6 @@ const ProductInfo = ({ product}) => {
             className="overlay"
           >
             <div className="product-info">
-              <span
-                style={{ top: "-30px", right: "-10px",color:'white',fontSize:'2.5rem' }}
-                className="position-absolute  "
-                onClick={handleCloseClick}
-              >
-                <i className="fa-solid fa-circle-xmark"></i>
-              </span>
               <div className="product-info--image">
                 <img src={product.images} alt={product.name} />
               </div>

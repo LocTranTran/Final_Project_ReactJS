@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import './CartCompact.scss';
 import { SidebarContext } from '../../utils/SidebarContext';
 import { CartContext } from "../../utils/CartContext";
+import { Link } from "react-router-dom";
 const CartCompact = () => {
   const { handleClose } = useContext(SidebarContext);
-  const { cartItems, formatPrice } = useContext(CartContext);
+  const {isOpen, cartItems, formatPrice } = useContext(CartContext);
   return (
     <div
       style={{
@@ -16,10 +17,10 @@ const CartCompact = () => {
         backgroundColor: "rgba(0, 0, 0, 0.35)" /* Màu đen với độ mờ là 0.5 */,
         zIndex: "10" /* Đảm bảo overlay hiển thị trên phần tử khác */,
       }}
+      onClick={handleClose}
       className="overlay"
     >
-      <div className="cart">
-        <button onClick={handleClose}>Đóng</button>
+      <div className={`cart ${isOpen ? "open" : ""}`}>
         <h3>Giỏ hàng</h3>
         {cartItems.length === 0 ? (
           <p>Giỏ hàng trống</p>
@@ -33,7 +34,7 @@ const CartCompact = () => {
                   <i>{item.description}</i>
                 </div>
                 <h1>
-                  <i>{item.price} vnđ</i>
+                  <i>{formatPrice(item.price)} vnđ</i>
                 </h1>
                 <button className="cart-remove">
                   <i
@@ -50,7 +51,9 @@ const CartCompact = () => {
           <p>Tổng tiền: </p>
           <p>$99</p>
         </div>
-        <button className="cart__checkout-btn">Thanh toán</button>
+        <Link to="shop">
+          <button className="cart__checkout-btn">Thanh toán</button>
+        </Link>
         tới giỏ hàng
       </div>
     </div>
