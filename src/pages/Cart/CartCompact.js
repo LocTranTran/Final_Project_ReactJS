@@ -16,7 +16,8 @@
       );
         setCartItems(updatedCartItems);
     };
-      // Tăng số lượng hàng
+
+      // Tăng số lượng sản phẩm
     const reduceQuantity = (itemId) => {
         const updatedCartItems = cartItems.map((item) =>
           item.id === itemId && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
