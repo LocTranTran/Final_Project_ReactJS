@@ -1,0 +1,19 @@
+.bannerinfo {
+  background-image: url('../assets/image/banner.jpg');
+  height: 100px;
+  background-size: cover;
+  margin:10px 0;
+  .bannerinfos{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 20px;
+    color: #5e615e;
+    font-size: 1.6rem;
+    gap: 20px;
+    & i{
+        font-size: 1.5rem;
+    }
+  }
+}

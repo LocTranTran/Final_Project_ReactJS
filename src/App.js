@@ -11,9 +11,9 @@ const App = () => {
   return (
     <CartProvider>
       <LoginProvider>
-      <Header />
-        <Router/>
-      <Footer />
+        <Header />
+        <Router />
+        <Footer />
       </LoginProvider>
     </CartProvider>
   );
