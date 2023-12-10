@@ -77,8 +77,6 @@ export function CartProvider({ children, numItem }) {
     setSubTotal(newSubTotal);
   }, [cartItems]);
 
-=======
-
   // Sử dụng useEffect để lấy dữ liệu từ API khi component được render
   useEffect(() => {
     const fetchData = async () => {
@@ -204,7 +202,6 @@ export function CartProvider({ children, numItem }) {
         displayedItems,
         filterProduct,
         isLoading,
-        removeFromCart, 
         handleSearchInputChange,
         handleSearchButtonClick,
         handlePriceFilter,

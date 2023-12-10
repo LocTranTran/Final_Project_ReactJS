@@ -1,5 +1,6 @@
 
 .cart {
+  left: 1000px;
   display: grid;
   grid-template-rows: 20px 1fr 100px;
   position: fixed;
@@ -106,7 +107,6 @@
       padding-left: 20px;
     }
     &-title {
-      @include limited-text;
       font-size: 1.5rem;
       font-weight: 500;
       line-height: 1.5;
