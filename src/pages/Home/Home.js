@@ -11,7 +11,7 @@ const Home = () => {
     <div className="d-flex justify-content-center align-items-center  flex-column ">
       <BannerInfo/>
       <Banner />
-      <ProductList numItem={5} />
+      {/* <ProductList numItem={5} className='productlist'/> */}
       <DisBanner/>
       <Gird />
     </div>
