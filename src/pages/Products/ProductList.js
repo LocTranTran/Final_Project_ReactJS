@@ -31,11 +31,11 @@ const ProductList = ({ numItem }) => {
             />
           </div>
         ) : (
-          <ul className="products__list">
-            {displayedItemsSlice.map((product) => (
-              <ProductsItems key={product.id} product={product} />
-            ))}
-          </ul>
+            <ul className="products__list">
+              {displayedItemsSlice.map((product) => (
+                <ProductsItems key={product.id} product={product} />
+              ))}
+            </ul>
         )}
       </div>
       <Loading isLoading={isLoading} />

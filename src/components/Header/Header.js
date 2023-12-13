@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import { CartContext } from "../../utils/CartContext";
@@ -18,6 +19,9 @@ const Header = () => {
   const { handleOpen, isOpen } = useContext(SidebarContext);
     console.log(isOpen)
     // const [cartTransform, setCartTransform] = useState('translateX(0%)');
+    //============================= Tìm kiếm sản phẩm =============================================
+    const { searchTerm, searchResults, handleChange, handleSearch } = useContext(CartContext);
+
   return (
     <>
       <header className="header">
@@ -128,7 +132,8 @@ const Header = () => {
                       <i className="fa-solid fa-magnifying-glass"></i>
                     </label>
                     <input
-                      onChange={handleSearchInputChange}
+                      value={searchTerm} onChange={handleChange}
+                      // onChange={handleSearchInputChange}
                       type="search"
                       name="Tìm Kiếm sản phẩm"
                       placeholder="Search"
@@ -137,7 +142,8 @@ const Header = () => {
                     />
                   </div>
                   <button
-                    onClick={handleSearchButtonClick}
+                     onClick={handleSearch}
+                    // onClick={handleSearchButtonClick}
                     disabled={isLoading}
                     type="button"
                     className="header__midle-button"

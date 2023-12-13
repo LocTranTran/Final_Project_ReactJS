@@ -12,6 +12,7 @@ export function CartProvider({ children, numItem }) {
   const [displayedItems, setDisplayedItems] = useState([]); // Danh sách sản phẩm hiển thị
   const [filterProduct, setFilterProduct] = useState([]); // Danh sách sản phẩm sau khi lọc
   const [searchItem, setSearchItem] = useState(""); // Tìm Kiếm sản phẩm
+  const [searchResults, setSearchResults] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [quantity, setQuantity] = useState(1);
  const [subTotal, setSubTotal] = useState(0);
@@ -113,6 +114,21 @@ export function CartProvider({ children, numItem }) {
     }, 1000);
   };
 
+ // ================= Tìm kiếm sản phẩm ==================
+ const handleSearch = async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/search', {
+      params: { q: searchItem } // Truyền từ khóa tìm kiếm dưới dạng query parameter
+    });
+    setSearchResults(response.data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+const handleChange = (event) => {
+  setSearchItem(event.target.value);
+};
   // Hàm xử lý việc lọc sản phẩm theo giá
   const handlePriceFilter = (event) => {
     const selectPrice = event.target.value;
@@ -213,6 +229,11 @@ export function CartProvider({ children, numItem }) {
         handlePriceFilter,
         handleNameFilter,
         handleSort,
+        handleChange,
+        handleSearch,
+        searchItem,
+        setSearchItem,
+        searchResults,
       }}
     >
       {children}

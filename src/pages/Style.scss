@@ -42,3 +42,19 @@ body {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+@mixin button-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #E6E6E6;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      background-color: #00B207;
+      border: #00B207;
+      color: #fff;
+    }
+}
