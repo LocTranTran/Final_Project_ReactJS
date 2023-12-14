@@ -10,14 +10,14 @@ import DisBanner from "../Products/DisBanner";
 const Home = () => {
   return (
     <div className="d-flex justify-content-center align-items-center  flex-column ">
-      <BannerInfo/>
+      <BannerInfo />
       <Banner />
       <ProductHome nums={10}/>
       {/* <ProductList numItem={5} className='productlist'/> */}
       <DisBanner/>
       <Gird />
+      <ProductList numItem={10} />
     </div>
-    
   );
 };
 

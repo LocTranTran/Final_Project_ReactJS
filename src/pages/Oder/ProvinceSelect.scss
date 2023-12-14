@@ -1,0 +1,34 @@
+.province {
+    display: flex;
+    justify-content: space-around;
+
+    &-select {
+        width: 200px;
+
+        & option:checked {
+            border :none;
+            outline: none;
+        }
+    }
+    
+    &-input {
+  /* Add your desired styles here */
+
+  width: 90%;
+  height: 70px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px;
+  & input {
+    width: 100%;
+    padding-bottom: 43px;
+    border-radius: 5px;
+  }
+  & input:focus {
+    width: 100%;
+    border-color: transparent;
+      outline: none;
+  }
+
+    }
+}

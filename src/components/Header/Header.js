@@ -1,25 +1,37 @@
 import React, { useContext, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
 import { CartContext } from "../../utils/CartContext";
 import { LoginContext } from "../../utils/LoginContext";
 import { SidebarContext } from "../../utils/SidebarContext";
 import CartCompact from "../../pages/Cart/CartCompact";
 import Home from "../../pages/Home/Home";
+import { useDispatch, useSelector } from "react-redux";
+import { clearUsername, logout } from "../Redux/actions";
 const Header = () => {
   const { handleSearchInputChange, handleSearchButtonClick, isLoading } =
     useContext(CartContext);
   const {
-    loggedIn,
+    // loggedIn,
     handleLogout,
-    username,
-    handleUserClick,
-    showLogout,
+    // username,
+
+    // handleUserClick,
+    // showLogout,
   } = useContext(LoginContext);
+  const loggedInUser = useSelector((state) => state.loggedInUser);
   const { handleOpen, isOpen } = useContext(SidebarContext);
-    console.log(isOpen)
-    // const [cartTransform, setCartTransform] = useState('translateX(0%)');
+  // console.log(isOpen);
+  const [showHaha, setShowHaha] = useState(false);
+
+  const handleMouseEnter = () => {
+    setShowHaha(!showHaha);
+  };
+  const handleLogouts = () => {
+    handleLogout();
+  };
+
+  // const [cartTransform, setCartTransform] = useState('translateX(0%)');
   return (
     <>
       <header className="header">
@@ -45,66 +57,48 @@ const Header = () => {
                   </span>
                 </div>
                 <div className="header__top-right-separate"></div>
-                {loggedIn ? (
-                  <div className="header__top-auth">
-                    <Link
-                      className="header__top-sign justify-content-between header__top-sign-in d-flex align-items-center "
-                      style={{
-                        fontSize: "1.5rem",
-                        fontFamily: "cursive",
-                        width: "50px",
-                      }}
-                      onClick={handleUserClick}
-                    >
-                      <b>{username}</b>
-                      <i className="fa-solid fa-caret-down "></i>
-                    </Link>
-                    {showLogout && (
+                {loggedInUser ? (
+                  <div className="header__top-username">
+                    <b onClick={handleMouseEnter}>{loggedInUser}</b>
+                    {showHaha && (
                       <div
-                        className="d-flex flex-column justify-content-center"
-                        onClick={handleLogout}
                         style={{
                           position: "absolute",
-                          top: "70px",
-                          fontSize: "1.3rem",
-                          boxShadow: "0px 0px 2px gray",
+                          top: "80px",
+                          width: "80px",
                           height: "50px",
-                          color: "black",
                           backgroundColor: "white",
-                          padding: "5px",
+                          boxShadow: "0 0 3px black",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "space-around",
+                          alignItems: "start",
                         }}
                       >
-                        <Link
-                          to=""
-                          className="header__top-logout d-flex align-items-center "
-                        >
-                          Hồ sơ
-                        </Link>
-                        <Link
-                          to="login"
-                          className="header__top-logout d-flex align-items-center "
-                          onClick={handleLogout}
-                        >
+                        <button>
+                          <Link className="link-black" to="/profile">
+                            <span>Hồ sơ</span>
+                            <i className="fa-solid fa-user"></i>
+                          </Link>
+                        </button>
+                        <button onClick={handleLogouts}>
                           Đăng xuất
-                        </Link>
+                          <i className="fa-solid fa-right-from-bracket"></i>
+                        </button>
                       </div>
                     )}
                   </div>
                 ) : (
-                  <div className="header__top-auth">
-                    <Link
-                      to="login"
-                      onClick={handleUserClick}
-                      className="header__top-sign header__top-sign-in"
-                    >
-                      Đăng Nhập
+                  <div
+                    style={{ color: "black" }}
+                    className="header__top-login-register"
+                  >
+                    <Link to="/login" className="link-black">
+                      Đăng nhập
                     </Link>
-                    <div className="header__top-auth-separate">/</div>
-                    <Link
-                      to="register "
-                      className="header__top-sign header__top-sign-up"
-                    >
-                      Đăng Ký
+                    /
+                    <Link to="/register" className="link-black">
+                      Đăng ký
                     </Link>
                   </div>
                 )}
@@ -153,7 +147,10 @@ const Header = () => {
               {/* giỏ hàng */}
               <div>
                 <div onClick={handleOpen}>
-                  <i style={{color:'green',fontSize:'3rem'}} className="fa-solid fa-basket-shopping"></i>
+                  <i
+                    style={{ color: "green", fontSize: "3rem" }}
+                    className="fa-solid fa-basket-shopping"
+                  ></i>
                 </div>
                 {isOpen && <CartCompact />}
               </div>

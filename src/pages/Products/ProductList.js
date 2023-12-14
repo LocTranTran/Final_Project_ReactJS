@@ -15,6 +15,7 @@ const ProductList = ({ numItem }) => {
         Danh sách sản phẩm
       </h1>
       <div className="container">
+
         {displayedItemsSlice.length === 0 ? (
           <div
             style={{
