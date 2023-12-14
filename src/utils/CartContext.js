@@ -32,7 +32,7 @@ export function CartProvider({ children, numItem }) {
     if (cartItem && cartItem.quantity > 1) {
       cartItem.quantity--;
     }
-    const newSubTotal = cartItems.reduce(
+      const newSubTotal = cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
@@ -55,6 +55,7 @@ export function CartProvider({ children, numItem }) {
   };
 
   const addToCart = (product) => {
+    showNotification();
     const existingItem = cartItems.find(
       (cartItem) => cartItem.id === product.id
     );
@@ -96,6 +97,13 @@ export function CartProvider({ children, numItem }) {
 
     fetchData();
   }, [numItem]);
+  const showNotification = () => {
+    const notification = document.getElementById("notification");
+    notification.classList.add("show");
+    setTimeout(() => {
+      notification.classList.remove("show");
+    }, 1000); // Thời gian hiển thị thông báo (ở đây là 2 giây)
+  };
 
   // Hàm xử lý việc tìm sản phẩm theo tên
   const handleSearchInputChange = (event) => {

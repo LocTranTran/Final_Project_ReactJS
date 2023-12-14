@@ -51,6 +51,9 @@ const ProductsItems = ({ product }) => {
           {/* <img src="./assets/image/cart.svg" alt="" /> */}
           {/* <i class="fa-solid fa-cart-shopping"></i> */}
         </button>
+        <div id="notification" className="notification">
+          Đã thêm vào giỏ hàng!
+        </div>
       </div>
       {showProductInfo && (
         <ProductInfo

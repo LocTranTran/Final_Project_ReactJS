@@ -17,10 +17,10 @@ const ProductInfo = ({ product}) => {
               top: "0",
               left: "0",
               width: "100%",
-              height: "300%",
+              height: "380%",
               backgroundColor:
                 "rgba(0, 0, 0, 0.35)" /* Màu đen với độ mờ là 0.5 */,
-              zIndex: "8" /* Đảm bảo overlay hiển thị trên phần tử khác */,
+              zIndex: "5" /* Đảm bảo overlay hiển thị trên phần tử khác */,
             }}
             className="overlay"
           >
@@ -37,14 +37,14 @@ const ProductInfo = ({ product}) => {
                   Loại sản phẩm : {product.category}
                 </span>
                 <hr />
-                <div className="info-cart">
+                {/* <div className="info-cart">
                   <span className="info-plus">
                     <button className="plus-input">-</button>
                     <span className="plus-input">0</span>
                     <button className="plus-input">+</button>
                   </span>
                   <button className="info-btn">Thêm vào giỏ hàng</button>`
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
