@@ -11,10 +11,11 @@ const ProductList = ({ numItem }) => {
 
   return (
     <>
-      <h1 style={{ fontSize: "3rem", padding: "10px 0" }}>
+      <h1 className="product__title">
         Danh sách sản phẩm
       </h1>
-      <div className="container-xxl ">
+      <div className="container">
+
         {displayedItemsSlice.length === 0 ? (
           <div
             style={{
@@ -31,11 +32,11 @@ const ProductList = ({ numItem }) => {
             />
           </div>
         ) : (
-          <ul className="products__list d-flex flex-wrap">
-            {displayedItemsSlice.map((product) => (
-              <ProductsItems key={product.id} product={product} />
-            ))}
-          </ul>
+            <ul className="products__list">
+              {displayedItemsSlice.map((product) => (
+                <ProductsItems key={product.id} product={product} />
+              ))}
+            </ul>
         )}
       </div>
       <Loading isLoading={isLoading} />

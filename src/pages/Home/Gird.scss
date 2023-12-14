@@ -1,34 +1,100 @@
-
-.girds{
-    padding: 50px 0;
-.gird {
-    width: 424px;
-    height:536px;
-    border-radius: 5px;
-    background-size: cover;
-    .btn-gird {
-        position: relative;
-        border-radius: 30px;
-        width: 170px;
-        height: 65px;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%,-60%);
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-    .btn-gird:hover{
-        color:rgb(19, 232, 19);
-        background-color: rgb(255, 255, 255);
-    }
-    &:nth-child(1){
-        background-image:url('../../assets/image/gird1.jpg') ;
-    }
-    &:nth-child(2){
-        background-image:url('../../assets/image/gird3.jpg') ;
-    }
-    &:nth-child(3){
-        background-image:url('../../assets/image/gird2.1.jpg')  ;
-    }
+@import '.././Style.scss';
+.bannar {
+    margin-top: 100px;
+}
+.bannar__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+}
+.bannar__items {
+    height: 536px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.bannar__items-first {
+    @include bannar-items-bg;
+    background-image: url(../../../public/assets/image/bannar__img-1.jpg);
+}
+.bannar__items-seconds {
+    @include bannar-items-bg;
+    background-image: url(../../../public/assets/image/bannar__img-2.jpg);
+   
+}
+.bannar__items-thirds {
+    @include bannar-items-bg;
+    background-image: url(../../../public/assets/image/bannar__img-3.jpg);
+   
+}
+.bannar__items-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+.bannar__sub-first {
+    @include bannar-sub-text;
+    color: #fff;
+}
+.bannar__sub-seconds {
+    @include bannar-sub-text;
+    color: #fff;
+}
+.bannar__sub-thirds {
+    @include bannar-sub-text;
+    color: #fff;
+}
+.bannar__items-title {
+    @include bannar-title-text;
+    margin-top: 16px;
+    color: #fff;
+}
+.bannar__timer-gr {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+.bannar__time {
+    display: block;
+    // width: 156px;
+    width: auto;
+    margin-top: 11px;
+    // text-align: center;
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #fff;
     
-}}
+}
+
+.bannar__sale-seconds {
+    @include bannar-sale-text;
+    margin-top: 12px;
+    color: #fff;
+}
+.bannar__sale-outstanding-seconds {
+    @include bannar-sale-outstanding-text;
+    margin-left: 4px;
+    color: #000;
+}
+.bannar__sale-thirds {
+    @include bannar-sale-text;
+    margin-top: 8px;
+    color: #fff;
+}
+.bannar__sale-outstanding-thirds {
+    @include bannar-sale-outstanding-text;
+    padding: 4px 10px;
+    background-color: #000;
+    border-radius: 5px;
+    margin-left: 12px;
+    color: #FF8A00;
+}
+.bannar__button {
+    @include bannar-button;
+    margin-top: 30px;
+    // margin-bottom: auto;
+}

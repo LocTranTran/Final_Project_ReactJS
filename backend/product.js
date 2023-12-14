@@ -20,7 +20,7 @@ const products = [
     price: 250000,
     description: "Áo sơ mi tay dài chất vải mềm mại thoáng mát",
     images: [
-      "https://dongphuchaianh.vn/wp-content/uploads/2021/12/ao-so-mi-nam-dai-tay.jpg",
+      "https://s.alicdn.com/@sc04/kf/H069aae69f7f1494e84ffacada8fc35590.jpg_300x300.jpg",
     ],
     quantity: 1,
     category: "Áo",
@@ -145,7 +145,7 @@ const products = [
     quantity: 1,
     sold: 100,
     images: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaqTdlX8TrKJOX_e7B0UuI3_5m24PwppxyC_noUgQ5U1GRjgb3txNvbbH-cQczxb03hME&usqp=CAU",
+      "https://s.alicdn.com/@sc04/kf/Hb9426fe485f541418b422334ed1f89bbL.jpg_300x300.jpg",
     ],
     category: "Giày",
   },
@@ -315,6 +315,7 @@ const products = [
     category: "Mũ",
   },
 ];
+
 /// gửi nó về dùng respont
 app.get("/products", (req, res) => {
   res.status(200).json(products);

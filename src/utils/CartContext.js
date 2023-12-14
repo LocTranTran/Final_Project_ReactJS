@@ -20,12 +20,14 @@ export function CartProvider({ children, numItem }) {
   const updatedCartItems = cartItems.filter(item => item.id !== itemId);
   setCartItems(updatedCartItems);
 };
+// Định dạng giá tiền
   const formatPrice = (amount) => {
     return amount.toLocaleString("vi-VN", {
       style: "currency",
       currency: "VND",
     });
   };
+//========== Tăng trừ số lượng sản phẩm =====================
   const handleMinus = (item) => {
     const cartItem = cartItems.find((cartItem) => cartItem.id === item.id);
 
@@ -53,7 +55,7 @@ export function CartProvider({ children, numItem }) {
     setSubTotal(newSubTotal);
     setCartItems([...cartItems]);
   };
-
+// Thêm sản phẩm vô giỏ hàng
   const addToCart = (product) => {
     showNotification();
     const existingItem = cartItems.find(
@@ -69,12 +71,13 @@ export function CartProvider({ children, numItem }) {
       setCartItems([...cartItems, newItem]);
     }
   };
+  // Xóa sản phẩm khỏi giỏ hàng
   const handleRemoveItem = (itemId) => {
     const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCartItems);
   };
 
-  //Thêm vào giỏ hàng
+  // Tính tổng tiền
   useEffect(() => {
     const newSubTotal = cartItems.reduce(
       (total, item) => total + item.price * item.quantity,

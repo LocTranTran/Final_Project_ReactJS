@@ -5,6 +5,7 @@ import { CartContext } from "../../utils/CartContext";
 import { LoginContext } from "../../utils/LoginContext";
 import { SidebarContext } from "../../utils/SidebarContext";
 import CartCompact from "../../pages/Cart/CartCompact";
+import Home from "../../pages/Home/Home";
 import { useDispatch, useSelector } from "react-redux";
 import { clearUsername, logout } from "../Redux/actions";
 const Header = () => {
@@ -109,10 +110,10 @@ const Header = () => {
         <div className="header__midle">
           <div className="container">
             <div className="header__midle-wrap">
-              <figure className="header__midle-logo">
+              <Link to="/" className="header__midle-logo">
                 <img src="./assets/image/Logo.svg" alt="" />
                 <span className="header__midle-logo-name">Ecobazar</span>
-              </figure>
+              </Link>
               <div className="header__midle-search">
                 <form className="header__midle-search-form">
                   <div className="header__midle-search-wrap">
@@ -132,7 +133,7 @@ const Header = () => {
                     />
                   </div>
                   <button
-                    onClick={handleSearchButtonClick}
+                    // onClick={handleSearchButtonClick}
                     disabled={isLoading}
                     type="button"
                     className="header__midle-button"

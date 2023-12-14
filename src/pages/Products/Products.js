@@ -11,7 +11,6 @@ const Products = () => {
       <Category />
       <ProductList />
     </div>
-
     </>
   );
 };
