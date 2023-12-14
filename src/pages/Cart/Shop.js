@@ -1,8 +1,9 @@
-import React, { useContext} from "react";
+import React, { useContext, useState} from "react";
 import "./Shop.scss";
 import { CartContext } from "../../utils/CartContext";
 import BannerInfo from "../../components/BannerInfo";
 import { Link } from "react-router-dom";
+import Checkout from "../Oder/Checkout";
 
 const Shop = () => {
   const {
@@ -13,8 +14,13 @@ const Shop = () => {
     handlePlus,
     handleMinus,
   } = useContext(CartContext);
-  const ship = subTotal / 20;
+  const ship = subTotal / 50;
   const total = ship + subTotal;
+
+  const [showCheckout, setShowcheckout] = useState(false);
+  const handleShowCheckout = () => {
+    setShowcheckout(true)
+  }
   return (
     <>
       <BannerInfo page={"Giỏ Hàng"} />
@@ -111,7 +117,7 @@ const Shop = () => {
             <hr />
             <div className="d-flex justify-content-between">
               <span>Phí vận huyển </span>
-              <span>{ship > 50000 ?"Miễn phí ":formatPrice(ship)}</span>
+              <span>{formatPrice(ship)}</span>
             </div>
             <hr />
             <div className="d-flex justify-content-between">
@@ -119,7 +125,26 @@ const Shop = () => {
               <span>{formatPrice(total)}</span>
             </div>
             <hr />
-            <button className="order-button">Đặt hàng ngay</button>{" "}
+            {/* <Link to="checkouts"> */}
+              <button onClick={handleShowCheckout} className="order-button">Đặt hàng ngay</button>
+              {showCheckout &&<div
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%",
+              backgroundColor:
+                "rgba(0, 0, 0, 0.35)" /* Màu đen với độ mờ là 0.5 */,
+              zIndex: "5" /* Đảm bảo overlay hiển thị trên phần tử khác */,
+            }}
+            className="overlay"
+          >
+           <Checkout/>   
+          </div>
+            }
+              
+            {/* </Link> */}
           </div>
         </div>
       </div>

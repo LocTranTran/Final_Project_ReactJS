@@ -18,7 +18,7 @@ const Login = () => {
   } = useContext(LoginContext);
   return (
     <div className="d-flex justify-content-center align-content-center align-items-center login">
-      <div className="form-container">
+      <form className="form-container">
         <p className="title">Đăng Nhập</p>
         <div className="form">
           <input
@@ -27,6 +27,7 @@ const Login = () => {
             onChange={handleUsernameChange}
             className="input"
             placeholder="Tên Tài Khoản"
+            autoComplete="username"
           />
           <span className="d-flex align-items-center gap-3">
             <input
@@ -36,6 +37,7 @@ const Login = () => {
               onChange={handlePasswordChange}
               className="input"
               placeholder="Mật Khẩu"
+              autoComplete="current-password"
             />
             <i className="fa-solid fa-eye" onClick={handleCheckPassword}></i>
           </span>
@@ -98,7 +100,7 @@ const Login = () => {
             <span>Đăng nhập bằng Google</span>
           </div>
         </div>
-      </div>
+      </form>
       <Loading isLoading={isLoading} />
     </div>
   );

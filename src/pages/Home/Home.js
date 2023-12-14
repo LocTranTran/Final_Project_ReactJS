@@ -2,20 +2,19 @@ import React, { memo } from "react";
 import Gird from "./Gird";
 import Banner from "./Banner";
 import ProductList from "../Products/ProductList";
-import CartCompact from "../Cart/CartCompact";
 import './Home.scss';
 import BannerInfo from "../../components/BannerInfo";
 import DisBanner from "../Products/DisBanner";
 const Home = () => {
   return (
     <div className="d-flex justify-content-center align-items-center  flex-column ">
-      <BannerInfo/>
+      <BannerInfo />
       <Banner />
       <ProductList numItem={5} />
-      <DisBanner/>
+      <DisBanner />
       <Gird />
+      <ProductList numItem={10} />
     </div>
-    
   );
 };
 
