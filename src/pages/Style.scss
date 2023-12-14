@@ -58,3 +58,73 @@ body {
       color: #fff;
     }
 }
+@mixin bannar-sub-text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+@mixin bannar-title-text {
+  font-size: 3.3rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+}
+@mixin bannar-sale-text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  // letter-spacing: 0.04rem;
+  // text-transform: uppercase;
+}
+@mixin bannar-sale-outstanding-text {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  // letter-spacing: 0.04rem;
+  // text-transform: uppercase;
+}
+@mixin bannar-button {
+  display: block;
+  gap: 12px;
+  // padding: 14px 32px;
+  min-width: 162px;
+  height: 45px;
+  background-color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 45px;
+  color: #00B207;
+  border-radius: 999px;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    background-color: #00B207;
+    color: #fff;
+  }
+}
+@mixin bannar-items-bg {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200%;
+  &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.3;
+  }
+}
+@mixin footer-desc {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #808080;
+}

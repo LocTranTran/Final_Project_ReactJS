@@ -11,7 +11,7 @@ const ProductList = ({ numItem }) => {
 
   return (
     <>
-      <h1 style={{ fontSize: "3rem", padding: "10px 0" }}>
+      <h1 className="product__title">
         Danh sách sản phẩm
       </h1>
       <div className="container">

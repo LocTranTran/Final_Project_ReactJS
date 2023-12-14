@@ -1,94 +1,104 @@
-import React, {memo} from 'react';
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-
+import React from "react";
+import './Footer.scss'
 const Footer = () => {
   return (
-    <div className="container-fluid "style={{backgroundColor:'#222',fontSize:'1.4rem',color:'#DDD',height:'240px'}}>
-      <MDBFooter
-        className="container-xxl text-center text-lg-left"
-      >
-        <MDBContainer className="p-4 pb-0">
-          <MDBRow>
-            <MDBCol md="3" lg="4" xl="3" className="mx-auto mt-3">
-              <h6 className="text-uppercase mb-4 font-weight-bold">
-                <MDBIcon icon="store" className="mr-3" />
-                Cửa hàng ABC
-              </h6>
-              <p>Địa chỉ: 123 Đường Cách Mạng Tháng 8, Quận 1, TP.HCM</p>
-              <p>Số điện thoại: 1900 1234</p>
-              <p>Email: support@shopabc.com</p>
-            </MDBCol>
-
-            <MDBCol md="2" lg="2" xl="2" className="mx-auto mt-3">
-              <h6 className="text-uppercase mb-4 font-weight-bold">
-                Về chúng tôi
-              </h6>
-              <p>
-                <a href="#!" className="text-reset">
-                  Giới thiệu
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Tuyển dụng
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Chính sách bảo mật
-                </a>
-              </p>
-            </MDBCol>
-
-            <MDBCol md="3" lg="2" xl="2" className="mx-auto mt-3">
-              <h6 className="text-uppercase mb-4 font-weight-bold">
-                Hỗ trợ khách hàng
-              </h6>
-              <p>
-                <a href="#!" className="text-reset">
-                  Phương thức thanh toán
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Chính sách đổi trả
-                </a>
-              </p>
-              <p>
-                <a href="#!" className="text-reset">
-                  Chính sách bảo hành
-                </a>
-              </p>
-            </MDBCol>
-
-            <hr className="w-100 clearfix d-md-none" />
-
-            <MDBCol md="4" lg="3" xl="3" className="mx-auto mt-3">
-              <h6 className="text-uppercase mb-4 font-weight-bold">
-                Kết nối với chúng tôi
-              </h6>
-              <p>
-                <MDBIcon fab icon="facebook" className="mr-3" /> Facebook
-              </p>
-              <p>
-                <MDBIcon fab icon="twitter" className="mr-3" /> Twitter
-              </p>
-              <p>
-                <MDBIcon fab icon="youtube" className="mr-3" /> Youtube
-              </p>
-              <p>
-                <MDBIcon fab icon="instagram" className="mr-3" /> Instagram
-              </p>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-
-        <div className="text-center py-3">
-          <p>&copy; {new Date().getFullYear()} Copyright: Cửa hàng ABC</p>
-        </div>
-      </MDBFooter>
-    </div>
+    <>
+       <footer className="footer">
+          <div className="container">
+            <div className="footer__list">
+              {/* --------------Items-1----------------- */}
+              <div className="footer__company">
+                <h3 className="footer__title">About Shopery</h3>
+                <p className="footer__company-desc">Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.</p>
+                <div className="footer__company-contact-gr">
+                  <span className="footer__company-contact">(219) 555-0114</span>
+                  <span className="footer__company-contact-or">or</span>
+                  <span className="footer__company-contact">(219) 555-0114</span>
+                </div>
+              </div>
+               {/* --------------Items-2----------------- */}
+              <div className="footer__account">
+                <h3 className="footer__title">My Account</h3>
+                <ul className="footer__account-list footer__items-list">
+                  <li className="footer__account-items">
+                    <a href="#!" className="footer__account--link footer__items--link">My Account</a>
+                  </li>
+                  <li className="footer__account-items">
+                    <a href="#!" className="footer__account--link footer__items--link">Order History</a>
+                  </li>
+                  <li className="footer__account-items">
+                    <a href="#!" className="footer__account--link footer__items--link">Wishlist</a>
+                  </li>
+                  <li className="footer__account-items">
+                    <a href="#!" className="footer__account--link footer__items--link">Settings</a>
+                  </li>
+                </ul>
+              </div>
+               {/* --------------Items-3----------------- */}
+              <div className="footer__help">
+                <h3 className="footer__title">Helps</h3>
+                <ul className="footer__help-list footer__items-list">
+                  <li className="footer__help-items">
+                    <a href="#!" className="footer__help--link footer__items--link">Contact</a>
+                  </li>
+                  <li className="footer__help-items">
+                    <a href="#!" className="footer__help--link footer__items--link">Faqs</a>
+                  </li>
+                  <li className="footer__help-items">
+                    <a href="#!" className="footer__help--link footer__items--link">Terms & Condition</a>
+                  </li>
+                  <li className="footer__help-items">
+                    <a href="#!" className="footer__help--link footer__items--link">Privacy Policy</a>
+                  </li>
+                </ul>
+              </div>
+               {/* --------------Items-4----------------- */}
+              <div className="footer__proxy">
+                <h3 className="footer__title">Proxy</h3>
+                <ul className="footer__proxy-list footer__items-list">
+                  <li className="footer__proxy-items">
+                    <a href="#!" className="footer__proxy--link footer__items--link">About</a>
+                  </li>
+                  <li className="footer__proxy-items">
+                    <a href="#!" className="footer__proxy--link footer__items--link">Shop</a>
+                  </li>
+                  <li className="footer__proxy-items">
+                    <a href="#!" className="footer__proxy--link footer__items--link">Product</a>
+                  </li>
+                  <li className="footer__proxy-items">
+                    <a href="#!" className="footer__proxy--link footer__items--link">Products Details</a>
+                  </li>
+                  <li className="footer__proxy-items">
+                    <a href="#!" className="footer__proxy--link footer__items--link">Track Order</a>
+                  </li>
+                </ul>
+              </div>
+               {/* --------------Items-5----------------- */}
+              <div className="footer__download">
+                <h3 className="footer__title">Download our Mobile App</h3>
+               <div className="footer__button-gr">
+                  <button className="footer__button">
+                    <img src="./assets/image/apple.svg" alt="" />
+                    <div className="footer__button-info">
+                      <span className="footer__button-sub">Download on the</span>
+                      <span className="footer__button-label">App Store</span>
+                    </div>
+                  </button>
+                  <button className="footer__button">
+                    <img src="./assets/image/gg.svg" alt="" />
+                    <div className="footer__button-info">
+                      <span className="footer__button-sub">Download on the</span>
+                      <span className="footer__button-label">Google play</span>
+                    </div>
+                  </button>
+               </div>
+              </div>
+            </div>
+            <p className="footer__copyright">Ecobazar eCommerce © 2021. All Rights Reserved</p>
+          </div>
+       </footer>
+    </>
   );
 }
-
-export default memo(Footer);
+ 
+export default Footer;

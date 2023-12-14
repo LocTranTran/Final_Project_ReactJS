@@ -19,9 +19,6 @@ const Header = () => {
   const { handleOpen, isOpen } = useContext(SidebarContext);
     console.log(isOpen)
     // const [cartTransform, setCartTransform] = useState('translateX(0%)');
-    //============================= Tìm kiếm sản phẩm =============================================
-    const { searchTerm, searchResults, handleChange, handleSearch } = useContext(CartContext);
-
   return (
     <>
       <header className="header">
@@ -132,8 +129,7 @@ const Header = () => {
                       <i className="fa-solid fa-magnifying-glass"></i>
                     </label>
                     <input
-                      value={searchTerm} onChange={handleChange}
-                      // onChange={handleSearchInputChange}
+                      onChange={handleSearchInputChange}
                       type="search"
                       name="Tìm Kiếm sản phẩm"
                       placeholder="Search"
@@ -142,7 +138,6 @@ const Header = () => {
                     />
                   </div>
                   <button
-                     onClick={handleSearch}
                     // onClick={handleSearchButtonClick}
                     disabled={isLoading}
                     type="button"
