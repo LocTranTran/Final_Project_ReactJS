@@ -10,11 +10,12 @@ const userReducer = (state = initialState, action) => {
       return {
         ...state,
         loggedInUser: action.payload,
-      };
-    case "CLEAR_USERNAME":
+          };
+      case "CLEAR_USERNAME":
       return {
         ...state,
         username: "",
+        loggedInUser: null,
       };
     default:
       return state;

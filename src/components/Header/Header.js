@@ -1,15 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.scss";
 import { CartContext } from "../../utils/CartContext";
 import { LoginContext } from "../../utils/LoginContext";
 import { SidebarContext } from "../../utils/SidebarContext";
 import CartCompact from "../../pages/Cart/CartCompact";
-import Home from "../../pages/Home/Home";
-import { useDispatch, useSelector } from "react-redux";
-import { clearUsername, logout } from "../Redux/actions";
+import {useSelector } from "react-redux";
 const Header = () => {
-  const { handleSearchInputChange, handleSearchButtonClick, isLoading } =
+  const { handleSearchInputChange, isLoading } =
     useContext(CartContext);
   const {
     // loggedIn,

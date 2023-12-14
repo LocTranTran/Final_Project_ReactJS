@@ -133,7 +133,7 @@ const Shop = () => {
               top: "0",
               left: "0",
               width: "100%",
-              height: "100%",
+              height: "140%",
               backgroundColor:
                 "rgba(0, 0, 0, 0.35)" /* Màu đen với độ mờ là 0.5 */,
               zIndex: "5" /* Đảm bảo overlay hiển thị trên phần tử khác */,

@@ -1,23 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 import ProvinceSelect from "./ProvinceSelect ";
 import "./Checkout.scss";
-
+import { CartContext } from "../../utils/CartContext";
+import { LoginContext } from "../../utils/LoginContext";
 function Checkout() {
- const [paymentMethod, setPaymentMethod] = useState("");
+  const { isLoggedIn } = useContext(LoginContext);
+  const {clearCart } = useContext(CartContext); const [paymentMethod, setPaymentMethod] = useState("");
 //  const [discountCode, setDiscountCode] = useState("");
- const [isOrderPlaced, setIsOrderPlaced] = useState(false);
-
- const handlePlaceOrder = () => {
-   // Xử lý logic đặt hàng ở đây
-
-   // Sau khi đặt hàng thành công, đặt isOrderPlaced thành true
-   setIsOrderPlaced(true);
-
-   // Reset trạng thái đặt hàng sau một khoảng thời gian (nếu cần)
-   setTimeout(() => {
-     setIsOrderPlaced(false);
-   }, 1000); // Thời gian (ms) để hiển thị thông báo trước khi reset
- };
+const history = useNavigate();
+const handlePlaceOrder = () => {
+  // Xử lý đặt hàng
+  if (isLoggedIn) {
+    toast.success("Đặt hàng thành công!", {
+      autoClose: 1000, // Thời gian tự động ẩn thông báo (1 giây)
+      onClose: () => {
+        clearCart();
+        history("/"); // Chuyển hướng trở lại trang chủ
+      },
+    });
+  } else {
+    toast.error("Bạn chưa đăng nhập !", {
+      autoClose: 1000, // Thời gian tự động ẩn thông báo (1 giây)
+      onClose: () => {
+        history("/login"); // Chuyển hướng trở lại trang chủ
+      },
+    });
+  }
+    // Hiển thị thông báo thành công
+};
  const handlePaymentMethodChange = (e) => {
    setPaymentMethod(e.target.value);
  };
@@ -77,10 +90,8 @@ function Checkout() {
 </label>
 <button class="button" onClick={handleApplyDiscount}>Áp dụng mã giảm giá</button> */}
       {/* Các phần tử khác trong trang đặt hàng */}
-      {isOrderPlaced && (
-        <div className="success-message">Đặt hàng thành công!</div>
-      )}
-      <div onClick={handlePlaceOrder}  className="oder">
+      <ToastContainer />
+      <div onClick={handlePlaceOrder} className="oder">
         Đặt Hàng
       </div>
     </div>

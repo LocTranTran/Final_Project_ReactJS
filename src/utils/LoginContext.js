@@ -21,7 +21,8 @@ export function LoginProvider({ children }) {
   const [checkConfirmPassword, setCheckConfirmPassword] = useState(""); // Trạng thái kiểm tra mật khẩu xác nhận
   const [error, setError] = useState(""); // Trạng thái lưu trữ thông báo lỗi
   const [loggedIn, setLoggedIn] = useState(false); // Trạng thái đăng nhập
-  const navigate = useNavigate(); // Hàm điều hướng trang
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);// Hàm điều hướng trang
   // const login = (name) => {
   //   setLoggedIn(true); // Đánh dấu đã đăng nhập
   //   setUsername(name); // Lưu tên người dùng
@@ -66,6 +67,7 @@ export function LoginProvider({ children }) {
     axios
       .post("http://localhost:3001/login", { username, password })
       .then((response) => {
+        setIsLoggedIn(true);//đa đăng nhập
         setIsLoading(true); // Đánh dấu đang tải
         // Hiển thị thông báo đăng nhập thành công
         toast.success("Đăng nhập thành công", {
@@ -73,6 +75,7 @@ export function LoginProvider({ children }) {
           toastClassName: "toast",
         });
         // Dispatch action `login` để đăng nhập người dùng
+        
         dispatch(setLoggedInUser(username));
         setTimeout(() => {
           navigate("/"); // Chuyển hướng đến trang chính
@@ -131,6 +134,7 @@ export function LoginProvider({ children }) {
   return (
     <LoginContext.Provider
       value={{
+        setIsLoggedIn,isLoggedIn,
         error,
         inputRef,
         username,

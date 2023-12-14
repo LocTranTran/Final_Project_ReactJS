@@ -20,7 +20,8 @@ const authReducer = (state = initialState, action) => {
     case "CLEAR_USERNAME":
       return {
         ...state,
-        username: "",
+          username: "",
+          loggedInUser: null
       };
     default:
       return state;

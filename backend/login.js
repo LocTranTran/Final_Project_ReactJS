@@ -15,7 +15,12 @@ app.use(
 //---------------------------------------------------------------------------------------
 // Giả định danh sách người dùng đã đăng ký
 const users = [
-  { username: "tran", password: "tran" },
+  {
+    username: "tran",
+    password: "tran",
+    email: "tran26122003@gmail.com",
+    phoneNumber: "0829757417",
+  },
   { username: "user2", password: "password2" },
 ];
 

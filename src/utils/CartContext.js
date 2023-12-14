@@ -19,7 +19,11 @@ export function CartProvider({ children, numItem }) {
  const removeFromCart = (itemId) => {
   const updatedCartItems = cartItems.filter(item => item.id !== itemId);
   setCartItems(updatedCartItems);
-};
+  };
+  const clearCart = () => {
+    // Xóa toàn bộ sản phẩm trong giỏ hàng
+    setCartItems([]);
+  };
 // Định dạng giá tiền
   const formatPrice = (amount) => {
     return amount.toLocaleString("vi-VN", {
@@ -204,6 +208,7 @@ export function CartProvider({ children, numItem }) {
   return (
     <CartContext.Provider
       value={{
+        clearCart,
         subTotal,
         setSubTotal,
         setQuantity,
