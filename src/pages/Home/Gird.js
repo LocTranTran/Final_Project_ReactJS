@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Gird.scss'
+import { Link } from 'react-router-dom';
 const Gird = () => {
   const [days, setDays] = useState(3); // Số ngày ban đầu
   const [hours, setHours] = useState(21); // Số giờ ban đầu
@@ -52,7 +53,7 @@ const Gird = () => {
               <div className="bannar__timer-gr">
               <span className='bannar__time'>{`${formatNumber(days)} : ${formatNumber(hours)} : ${formatNumber(minutes)} : ${formatNumber(seconds)}`}</span>
               </div>
-              <button className="bannar__button">Shop Now 
+              <Link className="bannar__button" to='/products'>Shop Now 
                 {/* <span>
                   <svg 
                     width="17"
@@ -74,7 +75,7 @@ const Gird = () => {
                         stroke-linejoin="round"/>
                     </svg>
                   </span> */}
-                </button>
+                </Link>
             </div>
 
           </div>
@@ -86,7 +87,7 @@ const Gird = () => {
               <p className="bannar__sale-seconds">Started at 
                 <b  className='bannar__sale-outstanding-seconds'>$79.99</b>
               </p>
-              <button className="bannar__button">Shop Now 
+              <Link className="bannar__button" to='/products'>Shop Now 
                 {/* <span>
                   <svg 
                     width="17"
@@ -108,7 +109,7 @@ const Gird = () => {
                         stroke-linejoin="round"/>
                     </svg>
                   </span> */}
-                </button>
+                </Link>
             </div>
           </div>
           {/* -----------------Items-3---------------- */}
@@ -119,7 +120,7 @@ const Gird = () => {
               <p className="bannar__sale-thirds">Started at 
                 <b  className='bannar__sale-outstanding-thirds'>64% OFF</b>
               </p>
-              <button className="bannar__button">Shop Now 
+              <Link className="bannar__button" to='/products'>Shop Now 
                 {/* <span>
                   <svg 
                     width="17"
@@ -141,7 +142,7 @@ const Gird = () => {
                         stroke-linejoin="round"/>
                     </svg>
                   </span> */}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

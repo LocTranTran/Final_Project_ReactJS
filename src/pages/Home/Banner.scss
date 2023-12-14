@@ -12,68 +12,111 @@
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
+        // justify-content: center; 
         overflow: hidden;
     }
+    // &__items {
+    //     display: flex;
+    //     align-items: center;
+    //     flex-shrink: 0;
+    //     width: 100%;
+    //     height: 750px;
+    //     padding-left: 95px;
+    //     background-color: #EDF2EE;
+    //     border-radius: 8px;
+    //     &-info {
+    //         width: 41%;
+    //     }
+    //     &-sub-title {
+    //         color: var(--branding-success, #00B207);
+    //         font-size: 1.4rem;
+    //         font-style: normal;
+    //         font-weight: 500;
+    //         letter-spacing: 0.28px;
+    //         text-transform: uppercase;
+    //     }
+    //     &-title {
+    //         margin-top: 8px;
+    //         font-size: 7.2rem;
+    //         font-weight: 600;
+    //         line-height: 1.2;
+    //     }
+    //     &-sale {
+    //         margin-top: 28px;
+    //         font-size: 3.2rem;
+    //         font-weight: 400;
+    //         line-height: 1.2;
+
+    //         b {
+    //             font-weight: 600;
+    //             color: $warning-color;
+    //         }
+    //     }
+    //     &-sub-sale {
+    //         margin-top: 12px;
+    //         font-size: 1.4rem;
+    //         font-weight: 400;
+    //         line-height: 1.5;
+    //     }
+    //     &-button {
+    //         display: flex;
+    //         align-items: center;
+    //         gap: 16px;
+    //         padding: 16px 40px;
+    //         margin-top: 32px;
+    //         background-color: $primary-color;
+    //         border: none;
+    //         border-radius: 999px;
+    //         font-size: 1.6rem;
+    //         font-weight: 600;
+    //         line-height: 1.2;
+    //         color: #fff;
+    //         cursor: pointer;
+    //     }
+        
+    // }
     &__items {
-        display: flex;
-        align-items: center;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 750px;
+        background-image: url(../../../public/assets/image/Banner-1.png);
+        // background-color: red;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+        &-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 16px;
+                    padding: 16px 40px;
+                    margin-right: auto;
+                    margin-left: auto;
+                    margin-top: 520px;
+                    background-color: #000;
+                    // border: 2px solid #000;
+                    border-radius: 999px;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    line-height: 1.2;
+                    color: #fff;
+                    cursor: pointer;
+                    transition: 0.4s;
+                    // &:hover {
+                    //     background-color: #000;
+                    //     color: #fff;
+                    // }
+                }
+    }
+    &__items:nth-child(2) {
         flex-shrink: 0;
         width: 100%;
         height: 750px;
-        padding-left: 95px;
-        background-color: #EDF2EE;
+        background-image: url(../../../public/assets/image/Banner-2.png);
+        background-color: #000;
+        background-size: 100%;
+        background-repeat: no-repeat;
         border-radius: 8px;
-        &-info {
-            width: 41%;
-        }
-        &-sub-title {
-            color: var(--branding-success, #00B207);
-            font-size: 1.4rem;
-            font-style: normal;
-            font-weight: 500;
-            letter-spacing: 0.28px;
-            text-transform: uppercase;
-        }
-        &-title {
-            margin-top: 8px;
-            font-size: 7.2rem;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-        &-sale {
-            margin-top: 28px;
-            font-size: 3.2rem;
-            font-weight: 400;
-            line-height: 1.2;
-
-            b {
-                font-weight: 600;
-                color: $warning-color;
-            }
-        }
-        &-sub-sale {
-            margin-top: 12px;
-            font-size: 1.4rem;
-            font-weight: 400;
-            line-height: 1.5;
-        }
-        &-button {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 16px 40px;
-            margin-top: 32px;
-            background-color: $primary-color;
-            border: none;
-            border-radius: 999px;
-            font-size: 1.6rem;
-            font-weight: 600;
-            line-height: 1.2;
-            color: #fff;
-            cursor: pointer;
-        }
-        
     }
     &__items-img-block {
         width: 820px;

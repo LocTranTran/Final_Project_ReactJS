@@ -1,12 +1,13 @@
 import React from "react";
 import "./Banner.scss";
 export default function Banner() {
+
   return (
     <>
       <div className="banner">
         <div className="banner__list">
           <section className="banner__items">
-            <div className="banner__items-info">
+            {/* <div className="banner__items-info">
               <span className="banner__info-sub-title">
                 Chào mừng bạn đến với Shopery
               </span>
@@ -25,7 +26,71 @@ export default function Banner() {
             </div>
             <figure className="banner__items-img-block">
               {/* <img src="../../assets/image/bannens.png" alt="" /> */}
-            </figure>
+            <button className="banner__items-button">
+                Khám phá ngay
+                <svg 
+                    width="17"
+                    height="15" 
+                    viewBox="0 0 17 15" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg">
+                      <path 
+                        d="M16 7.50055H1" 
+                        stroke="currentColor" 
+                        stroke-width="1.5" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"/>
+                      <path 
+                        d="M9.9502 1.47552L16.0002 7.49953L9.9502 13.5245"
+                        stroke="currentColor" 
+                        stroke-width="1.5" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"/>
+                    </svg>
+              </button>
+          </section>
+          <section className="banner__items">
+            {/* <div className="banner__items-info">
+              <span className="banner__info-sub-title">
+                Chào mừng bạn đến với Shopery
+              </span>
+              <h1 className="banner__items-title ">
+                Thời trang và phụ kiện thời thượng
+              </h1>
+              <p className="banner__items-sale">Giảm giá lên đến 30%</p>
+              <p className="banner__items-sub-sale">
+                Miễn phí vận chuyển cho tất cả đơn hàng. Chúng tôi giao hàng,
+                bạn thả ga mua sắm
+              </p>
+              <button className="banner__items-button">
+                Khám phá ngay
+                <img src="./assets/image/arrow.svg" alt="" />
+              </button>
+            </div>
+            <figure className="banner__items-img-block">
+              {/* <img src="../../assets/image/bannens.png" alt="" /> */}
+            <button className="banner__items-button">
+                Khám phá ngay
+                <svg 
+                    width="17"
+                    height="15" 
+                    viewBox="0 0 17 15" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg">
+                      <path 
+                        d="M16 7.50055H1" 
+                        stroke="currentColor" 
+                        stroke-width="1.5" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"/>
+                      <path 
+                        d="M9.9502 1.47552L16.0002 7.49953L9.9502 13.5245"
+                        stroke="currentColor" 
+                        stroke-width="1.5" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"/>
+                    </svg>
+              </button>
           </section>
           {/* <section className="banner__items">
             <div className="banner__items-info">
