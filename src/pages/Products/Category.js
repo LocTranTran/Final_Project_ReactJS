@@ -11,7 +11,11 @@ const Category = () => {
   const handlePriceFilters = (event) => {
     const selectedPrice = event.target.value;
     setPriceFilter(selectedPrice);
+    ////Dòng này sử dụng hàm setPriceFilter để cập nhật giá trị của biến priceFilter.
+    ///Biến priceFilter là một state đã được khởi tạo bằng hook useState và được quản lý bởi React. Bằng cách gọi setPriceFilter(selectedPrice), giá trị mới được gán cho priceFilter và React sẽ tự động cập nhật lại giao diện.
     handlePriceFilter(event);
+    ///Dòng này gọi hàm handlePriceFilter từ context CartContext và truyền event như một tham số.
+    /// Hàm handlePriceFilter được sử dụng để xử lý logic liên quan đến bộ lọc giá trong ngữ cảnh của ứng dụng.
   };
   const handleNameFilters = (event) => {
     const selectedPrice = event.target.value;
@@ -64,6 +68,7 @@ const Category = () => {
           <option value="Ví">Ví</option>
           <option value="Túi">Túi</option>
           <option value="Giày">Giày</option>
+          <option value="Mũ">Mũ</option>
         </select>
       <select className='filter__price' onChange={handlePriceFilters} value={priceFilter}>
           <option value="all">Giá</option>
